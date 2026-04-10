@@ -1,0 +1,51 @@
+---
+const categories = [
+  {
+    label: 'ML / DL',
+    items: ['PyTorch', 'TensorFlow', 'Transformers', 'PEFT', 'vLLM', 'Ultralytics'],
+  },
+  {
+    label: 'LLM / RAG',
+    items: ['LangChain', 'LangGraph', 'AutoGen', 'Qdrant', 'ChromaDB'],
+  },
+  {
+    label: 'Backend',
+    items: ['Python', 'FastAPI', 'Django', 'SQLAlchemy', 'Celery'],
+  },
+  {
+    label: 'DevOps',
+    items: ['Docker', 'Linux', 'Nginx', 'GitLab CI', 'Pants'],
+  },
+  {
+    label: 'Data',
+    items: ['PostgreSQL', 'Redis', 'MongoDB', 'Elasticsearch'],
+  },
+];
+---
+
+<section id="stack" class="py-24 px-6">
+  <div class="max-w-3xl mx-auto">
+    <div class="fade-in text-center mb-16">
+      <p class="text-sm font-medium text-accent-500 mb-3 tracking-wide uppercase">Stack</p>
+      <h2 class="section-heading">Technologies</h2>
+      <p class="section-subheading mt-3">Tools and frameworks I work with daily.</p>
+    </div>
+
+    <div class="space-y-8">
+      {categories.map((category) => (
+        <div class="fade-in">
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500 mb-3">
+            {category.label}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {category.items.map((item) => (
+              <span class="px-3.5 py-1.5 text-sm font-medium rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-800/30 text-zinc-700 dark:text-zinc-300 hover:border-accent-500/50 hover:text-accent-500 transition-colors duration-200 cursor-default">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
