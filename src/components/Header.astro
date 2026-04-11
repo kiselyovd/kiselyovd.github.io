@@ -26,15 +26,12 @@ import ThemeToggle from './ThemeToggle.astro';
 
 <script is:inline>
   const header = document.getElementById('site-header');
-  let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > 60) {
+    if (window.scrollY > 60) {
       header.classList.add('bg-white/80', 'dark:bg-surface-900/80', 'backdrop-blur-lg', 'border-b', 'border-zinc-200/50', 'dark:border-zinc-800/50');
     } else {
       header.classList.remove('bg-white/80', 'dark:bg-surface-900/80', 'backdrop-blur-lg', 'border-b', 'border-zinc-200/50', 'dark:border-zinc-800/50');
     }
-    lastScroll = currentScroll;
   });
 </script>

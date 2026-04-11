@@ -1,7 +1,7 @@
-import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://kiselyovd.github.io',
-  integrations: [tailwind()],
+  integrations: [tailwind({ applyBaseStyles: false })],
 });
