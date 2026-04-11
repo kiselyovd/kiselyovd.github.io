@@ -1,6 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  --color-surface-50: #fafafa;
+  --color-surface-100: #f4f4f5;
+  --color-surface-200: #e4e4e7;
+  --color-surface-800: #141414;
+  --color-surface-900: #0a0a0a;
+  --color-surface-950: #050505;
+
+  --color-accent-400: #38bdf8;
+  --color-accent-500: #0ea5e9;
+  --color-accent-600: #0284c7;
+}
 
 @layer base {
   html {
@@ -28,7 +44,7 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-accent-500 to-accent-400 bg-clip-text text-transparent;
+    @apply bg-linear-to-r from-accent-500 to-accent-400 bg-clip-text text-transparent;
   }
 }
 
