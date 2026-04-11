@@ -40,8 +40,7 @@ export const translations = {
       'AI-powered D&D application with Clean Architecture, CQRS, and FastAPI microservices.',
     'project.pneumo.desc':
       'Pneumonia detection from chest X-rays — 26 architectures benchmarked, 84% accuracy.',
-    'project.yolo.desc':
-      'Hands-on YOLO course — 6 modules from theory to real-world deployment.',
+    'project.yolo.desc': 'Hands-on YOLO course — 6 modules from theory to real-world deployment.',
     'project.grnti.desc':
       'Scientific paper classification by GRNTI codes — multilingual BERT, 86% F1 score.',
 
@@ -96,14 +95,10 @@ export const translations = {
     'projects.subheading': 'Open-source проекты и исследовательские эксперименты.',
     'project.rag.desc':
       'Модульный RAG-пайплайн с retrieval, reranking и генерацией — готов к продакшену.',
-    'project.finetune.desc':
-      'Шаблон для fine-tuning LLM с LoRA/QLoRA через Unsloth.',
-    'project.dnd.desc':
-      'D&D-приложение с AI — Clean Architecture, CQRS, микросервисы на FastAPI.',
-    'project.pneumo.desc':
-      'Детекция пневмонии по рентгену — 26 архитектур, 84% accuracy.',
-    'project.yolo.desc':
-      'Практический курс по YOLO — 6 модулей от теории до деплоя.',
+    'project.finetune.desc': 'Шаблон для fine-tuning LLM с LoRA/QLoRA через Unsloth.',
+    'project.dnd.desc': 'D&D-приложение с AI — Clean Architecture, CQRS, микросервисы на FastAPI.',
+    'project.pneumo.desc': 'Детекция пневмонии по рентгену — 26 архитектур, 84% accuracy.',
+    'project.yolo.desc': 'Практический курс по YOLO — 6 модулей от теории до деплоя.',
     'project.grnti.desc':
       'Классификация научных статей по кодам ГРНТИ — multilingual BERT, 86% F1.',
 
@@ -115,8 +110,7 @@ export const translations = {
     // Contact
     'contact.label': 'Контакты',
     'contact.heading': 'Связаться',
-    'contact.text':
-      'Открыт к сотрудничеству, консалтингу и интересным ML-проектам. Пишите.',
+    'contact.text': 'Открыт к сотрудничеству, консалтингу и интересным ML-проектам. Пишите.',
 
     // Footer
     'footer.github': 'GitHub',
