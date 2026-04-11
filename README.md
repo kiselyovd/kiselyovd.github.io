@@ -1,21 +1,40 @@
 # kiselyovd.github.io
 
-Personal portfolio website built with [Astro](https://astro.build/) and Tailwind CSS.
+Personal portfolio website — [kiselyovd.github.io](https://kiselyovd.github.io)
+
+## Tech Stack
+
+- **Framework**: [Astro](https://astro.build/) 6
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) 4
+- **Runtime**: [Bun](https://bun.sh/)
+- **Linting**: [Biome](https://biomejs.dev/)
+- **Git hooks**: [Lefthook](https://github.com/evilmartians/lefthook)
+- **Type checking**: TypeScript 6 + `astro check`
+- **Deploy**: GitHub Pages via Actions
 
 ## Development
 
 ```bash
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
-## Build
+## Scripts
 
-```bash
-npm run build
-npm run preview
-```
+| Command | Description |
+|---------|-------------|
+| `bun run dev` | Start dev server |
+| `bun run build` | Type check + production build |
+| `bun run preview` | Preview production build |
+| `bun run check` | Astro type check |
+| `bun run lint` | Biome lint & format check |
+| `bun run lint:fix` | Auto-fix lint issues |
+| `bun run format` | Format with Biome |
 
 ## Deployment
 
-The site is automatically deployed to GitHub Pages via GitHub Actions on push to `main`.
+Automatically deployed to GitHub Pages on push to `main`. CI pipeline runs Biome lint, Astro type check, and build before deploying.
+
+## License
+
+MIT
