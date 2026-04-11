@@ -1,0 +1,19 @@
+---
+---
+
+<button
+  id="lang-toggle"
+  aria-label="Switch language"
+  class="relative px-2.5 py-1 rounded-lg text-xs font-semibold tracking-wide text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200 uppercase"
+>
+  <span id="lang-label">EN</span>
+</button>
+
+<script is:inline>
+  document.getElementById('lang-toggle').addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-lang') || 'en';
+    const next = current === 'en' ? 'ru' : 'en';
+    localStorage.setItem('lang', next);
+    window.__setLang(next);
+  });
+</script>

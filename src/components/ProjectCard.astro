@@ -2,11 +2,12 @@
 interface Props {
   title: string;
   description: string;
+  descKey?: string;
   tech: string[];
   url: string;
 }
 
-const { title, description, tech, url } = Astro.props;
+const { title, description, descKey, tech, url } = Astro.props;
 ---
 
 <a
@@ -30,7 +31,7 @@ const { title, description, tech, url } = Astro.props;
     {title}
   </h3>
 
-  <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4 leading-relaxed">
+  <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4 leading-relaxed" data-i18n={descKey}>
     {description}
   </p>
 

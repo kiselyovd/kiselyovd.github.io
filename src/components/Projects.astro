@@ -5,36 +5,42 @@ const projects = [
   {
     title: 'rag-pipeline-demo',
     description: 'Production-ready RAG pipeline with modular retrieval, reranking, and generation.',
+    descKey: 'project.rag.desc',
     tech: ['Python', 'OpenAI', 'Qdrant', 'sentence-transformers'],
     url: 'https://github.com/kiselyovd/rag-pipeline-demo',
   },
   {
     title: 'llm-finetune-template',
     description: 'LLM fine-tuning template with LoRA/QLoRA via Unsloth for efficient training.',
+    descKey: 'project.finetune.desc',
     tech: ['Python', 'Unsloth', 'PEFT', 'TRL'],
     url: 'https://github.com/kiselyovd/llm-finetune-template',
   },
   {
     title: 'dungeon-master-ai',
     description: 'AI-powered D&D application with Clean Architecture, CQRS, and FastAPI microservices.',
+    descKey: 'project.dnd.desc',
     tech: ['Python', 'FastAPI', 'SQLAlchemy', 'Docker'],
     url: 'https://github.com/kiselyovd/dungeon-master-ai',
   },
   {
     title: 'x-pneumo-net',
     description: 'Pneumonia detection from chest X-rays — 26 architectures benchmarked, 84% accuracy.',
+    descKey: 'project.pneumo.desc',
     tech: ['Python', 'PyTorch', 'torchvision'],
     url: 'https://github.com/kiselyovd/x-pneumo-net',
   },
   {
     title: 'yolo-learn',
     description: 'Hands-on YOLO course — 6 modules from theory to real-world deployment.',
+    descKey: 'project.yolo.desc',
     tech: ['Python', 'Ultralytics', 'PyTorch'],
     url: 'https://github.com/kiselyovd/yolo-learn',
   },
   {
     title: 'grnti-classifier',
     description: 'Scientific paper classification by GRNTI codes — multilingual BERT, 86% F1 score.',
+    descKey: 'project.grnti.desc',
     tech: ['Python', 'TensorFlow', 'BERT'],
     url: 'https://github.com/kiselyovd/grnti-classifier',
   },
@@ -44,9 +50,9 @@ const projects = [
 <section id="projects" class="py-24 px-6">
   <div class="max-w-5xl mx-auto">
     <div class="fade-in text-center mb-16">
-      <p class="text-sm font-medium text-accent-500 mb-3 tracking-wide uppercase">Projects</p>
-      <h2 class="section-heading">Selected Work</h2>
-      <p class="section-subheading mt-3">Open-source projects and research experiments.</p>
+      <p class="text-sm font-medium text-accent-500 mb-3 tracking-wide uppercase" data-i18n="projects.label">Projects</p>
+      <h2 class="section-heading" data-i18n="projects.heading">Selected Work</h2>
+      <p class="section-subheading mt-3" data-i18n="projects.subheading">Open-source projects and research experiments.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
