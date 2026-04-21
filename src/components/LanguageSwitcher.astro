@@ -2,18 +2,34 @@
 ---
 
 <button
+  type="button"
   id="lang-toggle"
   aria-label="Switch language"
-  class="relative px-2.5 py-1 rounded-lg text-xs font-semibold tracking-wide text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200 uppercase"
+  class="font-mono text-[10px] tracking-[0.15em] uppercase px-2 py-1 border border-[color:var(--border)] rounded text-[color:var(--text-muted)] hover:text-[color:var(--text)] transition-colors"
 >
-  <span id="lang-label">EN</span>
+  <span id="lang-en" class="lang-option">EN</span>
+  <span class="text-[color:var(--text-subtle)]"> · </span>
+  <span id="lang-ru" class="lang-option">RU</span>
 </button>
 
 <script is:inline>
-  document.getElementById('lang-toggle').addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-lang') || 'en';
-    const next = current === 'en' ? 'ru' : 'en';
-    localStorage.setItem('lang', next);
-    window.__setLang(next);
-  });
+  (function () {
+    var btn = document.getElementById('lang-toggle');
+    var enEl = document.getElementById('lang-en');
+    var ruEl = document.getElementById('lang-ru');
+
+    function paint() {
+      var current = document.documentElement.getAttribute('lang') || 'en';
+      enEl.style.color = current === 'en' ? 'var(--accent)' : '';
+      ruEl.style.color = current === 'ru' ? 'var(--accent)' : '';
+    }
+
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('lang') || 'en';
+      window.__setLang(current === 'en' ? 'ru' : 'en');
+    });
+
+    document.addEventListener('langchange', paint);
+    paint();
+  })();
 </script>
