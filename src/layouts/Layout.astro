@@ -1,88 +1,127 @@
 ---
 import '../styles/global.css';
+import { translations } from '../i18n/translations';
 
 interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = 'ML Engineer — LLM systems, RAG, and computer vision in production' } = Astro.props;
+const {
+  title,
+  description = 'Lead ML Engineer. LLM systems, RAG, and multimodal pipelines for enterprise - on-premise and air-gapped.',
+} = Astro.props;
+
+const i18nJson = JSON.stringify(translations);
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://kiselyovd.github.io" />
+    <meta property="og:image" content="/profile-portrait.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" as="image" href="/profile-portrait.webp" type="image/webp" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+
     <title>{title}</title>
 
     <script is:inline>
-      // Theme
-      const theme = (() => {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          return localStorage.getItem('theme');
-        }
-        return 'dark';
+      (function () {
+        var saved = null;
+        try {
+          if (typeof localStorage !== 'undefined') saved = localStorage.getItem('theme');
+        } catch (_) {}
+        var mode = saved || 'system';
+        var resolved = mode === 'system'
+          ? (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+          : mode;
+        document.documentElement.classList.toggle('light', resolved === 'light');
+        document.documentElement.classList.toggle('dark', resolved === 'dark');
+        document.documentElement.setAttribute('data-theme-mode', mode);
       })();
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
     </script>
-    <script is:inline id="i18n-data" type="application/json">
-      {"en":{"nav.about":"About","nav.projects":"Projects","nav.stack":"Stack","nav.contact":"Contact","hero.name":"Daniil Kiselyov","hero.status":"Working on Text2BIM Agent","hero.subtitle":"ML Engineer","hero.description":"Building LLM systems, RAG pipelines, and computer vision solutions for production environments.","hero.cta.projects":"View Projects","hero.cta.contact":"Get in Touch","about.label":"About","about.heading":"Background","about.p1":"ML engineer focused on LLM systems, RAG, and computer vision in production. I build LLM-based assistants, OCR pipelines, and multimodal document models that run in real-world enterprise environments.","about.p2":"My work centers on deploying AI on-premise and in air-gapped environments for clients in construction, oil & gas, and other industries where cloud isn't an option. Models ship as production services, not just proof-of-concepts.","about.p3":"Former fullstack developer and team lead with a Django/React background. That experience means I treat ML the same way I treat software engineering — with proper architecture, testing, CI/CD, and monitoring.","about.current.label":"Currently building","about.current.text":"Text2BIM Agent — a multi-agent LLM platform for BIM design automation in Autodesk Revit.","projects.label":"Projects","projects.heading":"Selected Work","projects.subheading":"Open-source projects and research experiments.","project.rag.desc":"Production-ready RAG pipeline with modular retrieval, reranking, and generation.","project.finetune.desc":"LLM fine-tuning template with LoRA/QLoRA via Unsloth for efficient training.","project.dnd.desc":"AI-powered D&D application with Clean Architecture, CQRS, and FastAPI microservices.","project.pneumo.desc":"Pneumonia detection from chest X-rays — 26 architectures benchmarked, 84% accuracy.","project.yolo.desc":"Hands-on YOLO course — 6 modules from theory to real-world deployment.","project.grnti.desc":"Scientific paper classification by GRNTI codes — multilingual BERT, 86% F1 score.","stack.label":"Stack","stack.heading":"Technologies","stack.subheading":"Tools and frameworks I work with daily.","contact.label":"Contact","contact.heading":"Get in Touch","contact.text":"Open to collaborations, consulting, and interesting ML projects. Feel free to reach out.","footer.github":"GitHub","footer.email":"Email"},"ru":{"nav.about":"Обо мне","nav.projects":"Проекты","nav.stack":"Стек","nav.contact":"Контакты","hero.name":"Даниил Киселёв","hero.status":"Работаю над Text2BIM Agent","hero.subtitle":"ML-инженер","hero.description":"Строю LLM-системы, RAG-пайплайны и решения компьютерного зрения для продакшена.","hero.cta.projects":"Проекты","hero.cta.contact":"Связаться","about.label":"Обо мне","about.heading":"Бэкграунд","about.p1":"ML-инженер с фокусом на LLM-системы, RAG и компьютерное зрение в продакшене. Строю ассистентов на базе LLM, OCR-пайплайны и мультимодальные модели для работы с документами.","about.p2":"Разворачиваю AI on-premise и в air-gapped контурах для клиентов из строительства, нефтегаза и других отраслей, где облако — не вариант. Модели идут в прод как полноценные сервисы, а не PoC.","about.p3":"В прошлом — fullstack-разработчик и тимлид (Django/React). Этот опыт означает, что к ML я отношусь так же, как к разработке ПО — с архитектурой, тестами, CI/CD и мониторингом.","about.current.label":"Сейчас работаю над","about.current.text":"Text2BIM Agent — мультиагентная LLM-платформа для автоматизации BIM-проектирования в Autodesk Revit.","projects.label":"Проекты","projects.heading":"Избранные работы","projects.subheading":"Open-source проекты и исследовательские эксперименты.","project.rag.desc":"Модульный RAG-пайплайн с retrieval, reranking и генерацией — готов к продакшену.","project.finetune.desc":"Шаблон для fine-tuning LLM с LoRA/QLoRA через Unsloth.","project.dnd.desc":"D&D-приложение с AI — Clean Architecture, CQRS, микросервисы на FastAPI.","project.pneumo.desc":"Детекция пневмонии по рентгену — 26 архитектур, 84% accuracy.","project.yolo.desc":"Практический курс по YOLO — 6 модулей от теории до деплоя.","project.grnti.desc":"Классификация научных статей по кодам ГРНТИ — multilingual BERT, 86% F1.","stack.label":"Стек","stack.heading":"Технологии","stack.subheading":"Инструменты и фреймворки, с которыми работаю каждый день.","contact.label":"Контакты","contact.heading":"Связаться","contact.text":"Открыт к сотрудничеству, консалтингу и интересным ML-проектам. Пишите.","footer.github":"GitHub","footer.email":"Почта"}}
-    </script>
+
+    <script is:inline id="i18n-data" type="application/json" set:html={i18nJson}></script>
+
     <script is:inline>
-      // i18n engine
-      window.__setLang = function(lang) {
+      window.__setLang = function (lang) {
         var data = JSON.parse(document.getElementById('i18n-data').textContent);
         var dict = data[lang];
         if (!dict) return;
         document.documentElement.setAttribute('data-lang', lang);
         document.documentElement.setAttribute('lang', lang);
-        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
           var key = el.getAttribute('data-i18n');
-          if (dict[key] !== undefined) {
-            el.textContent = dict[key];
-          }
+          if (dict[key] !== undefined) el.textContent = dict[key];
         });
-        var label = document.getElementById('lang-label');
-        if (label) label.textContent = lang === 'en' ? 'RU' : 'EN';
+        try {
+          localStorage.setItem('lang', lang);
+        } catch (_) {}
+        document.dispatchEvent(new CustomEvent('langchange', { detail: { lang: lang } }));
       };
-      (function() {
-        var saved = typeof localStorage !== 'undefined' && localStorage.getItem('lang');
+      (function () {
+        var saved = null;
+        try {
+          saved = localStorage.getItem('lang');
+        } catch (_) {}
         var lang = saved || (navigator.language && navigator.language.startsWith('ru') ? 'ru' : 'en');
         window.__setLang(lang);
       })();
     </script>
+
+    <script is:inline>
+      window.__setThemeMode = function (mode) {
+        var resolved = mode === 'system'
+          ? (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+          : mode;
+        document.documentElement.classList.toggle('light', resolved === 'light');
+        document.documentElement.classList.toggle('dark', resolved === 'dark');
+        document.documentElement.setAttribute('data-theme-mode', mode);
+        try {
+          localStorage.setItem('theme', mode);
+        } catch (_) {}
+        document.dispatchEvent(new CustomEvent('thememodechange', { detail: { mode: mode, resolved: resolved } }));
+      };
+
+      var mq = window.matchMedia('(prefers-color-scheme: light)');
+      mq.addEventListener('change', function () {
+        var mode = document.documentElement.getAttribute('data-theme-mode') || 'system';
+        if (mode === 'system') window.__setThemeMode('system');
+      });
+    </script>
   </head>
-  <body class="font-sans min-h-screen">
+  <body class="min-h-screen">
     <slot />
 
     <script is:inline>
-      document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-              }
+      document.addEventListener('DOMContentLoaded', function () {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) entry.target.classList.add('visible');
             });
           },
-          { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+          { threshold: 0.1, rootMargin: '0px 0px -40px 0px' },
         );
-
-        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+        document.querySelectorAll('.fade-in').forEach(function (el) {
+          observer.observe(el);
+        });
       });
     </script>
   </body>
