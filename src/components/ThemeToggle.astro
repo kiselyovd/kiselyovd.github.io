@@ -3,40 +3,41 @@
 
 <button
   type="button"
-  id="theme-toggle"
+  class="theme-toggle font-mono text-[11px] px-2 py-1 border border-[color:var(--border)] rounded text-[color:var(--text-muted)] hover:text-[color:var(--text)] transition-colors flex items-center gap-[6px]"
   aria-label="Cycle theme mode"
-  class="font-mono text-[11px] px-2 py-1 border border-[color:var(--border)] rounded text-[color:var(--text-muted)] hover:text-[color:var(--text)] transition-colors flex items-center gap-[6px]"
 >
-  <span id="theme-icon-light" aria-hidden="true">☀</span>
-  <span id="theme-icon-dark" aria-hidden="true">☾</span>
-  <span id="theme-icon-system" aria-hidden="true">⌂</span>
+  <span class="theme-icon theme-icon-light" aria-hidden="true">☀</span>
+  <span class="theme-icon theme-icon-dark" aria-hidden="true">☾</span>
+  <span class="theme-icon theme-icon-system" aria-hidden="true">⌂</span>
 </button>
 
 <script is:inline>
   (function () {
-    var btn = document.getElementById('theme-toggle');
-    var icons = {
-      light: document.getElementById('theme-icon-light'),
-      dark: document.getElementById('theme-icon-dark'),
-      system: document.getElementById('theme-icon-system'),
-    };
-
-    function paint() {
+    function paintAll() {
       var mode = document.documentElement.getAttribute('data-theme-mode') || 'system';
       ['light', 'dark', 'system'].forEach(function (k) {
-        icons[k].style.color = k === mode ? 'var(--accent)' : 'var(--text-subtle)';
+        document.querySelectorAll('.theme-icon-' + k).forEach(function (el) {
+          el.style.color = k === mode ? 'var(--accent)' : 'var(--text-subtle)';
+        });
       });
-      btn.setAttribute('aria-pressed', mode === 'system' ? 'mixed' : 'true');
-      btn.setAttribute('title', 'Theme: ' + mode);
+      document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+        btn.setAttribute('aria-pressed', mode === 'system' ? 'mixed' : 'true');
+        btn.setAttribute('title', 'Theme: ' + mode);
+      });
     }
 
-    btn.addEventListener('click', function () {
-      var mode = document.documentElement.getAttribute('data-theme-mode') || 'system';
-      var next = mode === 'light' ? 'dark' : mode === 'dark' ? 'system' : 'light';
-      window.__setThemeMode(next);
+    document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+      if (btn.dataset.bound) return;
+      btn.dataset.bound = '1';
+      btn.addEventListener('click', function () {
+        if (typeof window.__setThemeMode !== 'function') return;
+        var mode = document.documentElement.getAttribute('data-theme-mode') || 'system';
+        var next = mode === 'light' ? 'dark' : mode === 'dark' ? 'system' : 'light';
+        window.__setThemeMode(next);
+      });
     });
 
-    document.addEventListener('thememodechange', paint);
-    paint();
+    document.addEventListener('thememodechange', paintAll);
+    paintAll();
   })();
 </script>
