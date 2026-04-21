@@ -1,0 +1,39 @@
+---
+interface Props {
+  slot: 'card1' | 'card2' | 'card3' | 'card4';
+  stack: string[];
+}
+const { slot, stack } = Astro.props;
+---
+
+<article class="relative bg-[color:var(--surface)] border border-[color:var(--border)] rounded-lg p-5 md:p-6">
+  <div
+    class="absolute top-4 right-4 font-mono text-[9px] text-[color:var(--text-subtle)]"
+    data-i18n={`ent.${slot}.role`}
+  ></div>
+
+  <div
+    class="font-mono text-[9px] tracking-[0.18em] uppercase text-[color:var(--accent)]"
+    data-i18n={`ent.${slot}.category`}
+  ></div>
+
+  <h3
+    class="mt-2 mb-2 text-[15px] md:text-[16px] font-bold text-[color:var(--text)]"
+    data-i18n={`ent.${slot}.title`}
+  ></h3>
+
+  <p
+    class="text-[12px] md:text-[13px] text-[color:var(--text-muted)] leading-[1.5] mb-3"
+    data-i18n={`ent.${slot}.desc`}
+  ></p>
+
+  <div class="flex flex-wrap gap-1.5">
+    {
+      stack.map((chip) => (
+        <span class="font-mono text-[9px] px-2 py-1 rounded bg-[color:var(--accent-soft)] text-[color:var(--accent-soft-text)]">
+          {chip}
+        </span>
+      ))
+    }
+  </div>
+</article>
