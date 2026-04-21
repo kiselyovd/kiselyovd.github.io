@@ -1,0 +1,24 @@
+---
+import EnterpriseCard from './EnterpriseCard.astro';
+
+const projects = [
+  { slot: 'card1' as const, stack: ['FastAPI', 'Tauri 2', 'C#/Revit', 'MCP', 'OIDC'] },
+  { slot: 'card2' as const, stack: ['vLLM', 'ChromaDB', 'Jina v4', 'PaddleOCR'] },
+  { slot: 'card3' as const, stack: ['Qwen 3.6', 'xgrammar', 'networkx'] },
+  { slot: 'card4' as const, stack: ['Whisper', 'MMS-TTS', 'low-resource'] },
+];
+---
+
+<section id="work" class="fade-in px-6 md:px-10 py-16 md:py-20 border-b border-[color:var(--border)]">
+  <span class="section-label block mb-3" data-i18n="ent.label">/ Enterprise work</span>
+  <h2
+    class="text-[22px] md:text-[28px] font-bold tracking-[-0.02em] leading-[1.1] text-[color:var(--text)] mb-6 max-w-3xl"
+    data-i18n="ent.heading"
+  >
+    Four enterprise AI systems in production
+  </h2>
+
+  <div class="grid md:grid-cols-2 gap-3 md:gap-4">
+    {projects.map((p) => <EnterpriseCard slot={p.slot} stack={p.stack} />)}
+  </div>
+</section>
