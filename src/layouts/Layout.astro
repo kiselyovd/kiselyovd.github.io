@@ -74,12 +74,19 @@ const i18nJson = JSON.stringify(translations);
         document.dispatchEvent(new CustomEvent('langchange', { detail: { lang: lang } }));
       };
       (function () {
-        var saved = null;
-        try {
-          saved = localStorage.getItem('lang');
-        } catch (_) {}
-        var lang = saved || (navigator.language && navigator.language.startsWith('ru') ? 'ru' : 'en');
-        window.__setLang(lang);
+        function applyInitialLang() {
+          var saved = null;
+          try {
+            saved = localStorage.getItem('lang');
+          } catch (_) {}
+          var lang = saved || (navigator.language && navigator.language.startsWith('ru') ? 'ru' : 'en');
+          window.__setLang(lang);
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', applyInitialLang);
+        } else {
+          applyInitialLang();
+        }
       })();
     </script>
 
