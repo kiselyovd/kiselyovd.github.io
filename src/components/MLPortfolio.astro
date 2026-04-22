@@ -60,11 +60,11 @@ const rows = [
       </tr>
     </thead>
     <tbody>
-      {rows.map((r) => <PortfolioRow {...r} />)}
+      {rows.map((r) => <PortfolioRow {...r} variant="desktop" />)}
     </tbody>
   </table>
 
   <div class="md:hidden space-y-2">
-    {rows.map((r) => <PortfolioRow {...r} />)}
+    {rows.map((r) => <PortfolioRow {...r} variant="mobile" />)}
   </div>
 </section>

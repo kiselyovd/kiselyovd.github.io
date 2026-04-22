@@ -5,52 +5,62 @@ interface Props {
   model: string;
   metrics: string;
   hfSlug: string;
+  variant: 'desktop' | 'mobile';
 }
-const { repo, task, model, metrics, hfSlug } = Astro.props;
+const { repo, task, model, metrics, hfSlug, variant } = Astro.props;
 const githubUrl = `https://github.com/kiselyovd/${repo}`;
 const hfUrl = `https://huggingface.co/kiselyovd/${hfSlug}`;
 ---
 
-<tr class="hidden md:table-row border-b border-[color:var(--border)]">
-  <td class="py-3 pr-4">
-    <a
-      href={githubUrl}
-      target="_blank"
-      rel="noopener"
-      class="font-mono text-[11px] font-semibold text-[color:var(--accent)] hover:underline"
-    >
-      {repo}
-    </a>
-  </td>
-  <td class="py-3 pr-4 text-[12px] text-[color:var(--text-muted)]">{task}</td>
-  <td class="py-3 pr-4 text-[12px] text-[color:var(--text-muted)]">{model}</td>
-  <td class="py-3 font-mono text-[11px] text-[color:var(--text)]">
-    {metrics}
-    <a
-      href={hfUrl}
-      target="_blank"
-      rel="noopener"
-      class="ml-2 inline-block px-1.5 py-0.5 rounded text-[9px] bg-[color:var(--accent-soft)] text-[color:var(--accent-soft-text)]"
-    >
-      HF
-    </a>
-  </td>
-</tr>
-
-<article class="md:hidden bg-[color:var(--surface)] border border-[color:var(--border)] rounded-md p-3">
-  <a href={githubUrl} target="_blank" rel="noopener" class="font-mono text-[12px] font-semibold text-[color:var(--accent)]">
-    {repo}
-  </a>
-  <div class="text-[10px] text-[color:var(--text-muted)] mt-1">{task} · {model}</div>
-  <div class="font-mono text-[10px] text-[color:var(--text)] mt-1 flex items-center gap-2">
-    {metrics}
-    <a
-      href={hfUrl}
-      target="_blank"
-      rel="noopener"
-      class="px-1.5 py-0.5 rounded text-[9px] bg-[color:var(--accent-soft)] text-[color:var(--accent-soft-text)]"
-    >
-      HF
-    </a>
-  </div>
-</article>
+{
+  variant === 'desktop' ? (
+    <tr class="border-b border-[color:var(--border)]">
+      <td class="py-3 pr-4">
+        <a
+          href={githubUrl}
+          target="_blank"
+          rel="noopener"
+          class="font-mono text-[11px] font-semibold text-[color:var(--accent)] hover:underline"
+        >
+          {repo}
+        </a>
+      </td>
+      <td class="py-3 pr-4 text-[12px] text-[color:var(--text-muted)]">{task}</td>
+      <td class="py-3 pr-4 text-[12px] text-[color:var(--text-muted)]">{model}</td>
+      <td class="py-3 font-mono text-[11px] text-[color:var(--text)]">
+        {metrics}
+        <a
+          href={hfUrl}
+          target="_blank"
+          rel="noopener"
+          class="ml-2 inline-block px-1.5 py-0.5 rounded text-[9px] bg-[color:var(--accent-soft)] text-[color:var(--accent-soft-text)]"
+        >
+          HF
+        </a>
+      </td>
+    </tr>
+  ) : (
+    <article class="bg-[color:var(--surface)] border border-[color:var(--border)] rounded-md p-3">
+      <a
+        href={githubUrl}
+        target="_blank"
+        rel="noopener"
+        class="font-mono text-[12px] font-semibold text-[color:var(--accent)]"
+      >
+        {repo}
+      </a>
+      <div class="text-[10px] text-[color:var(--text-muted)] mt-1">{task} · {model}</div>
+      <div class="font-mono text-[10px] text-[color:var(--text)] mt-1 flex items-center gap-2">
+        {metrics}
+        <a
+          href={hfUrl}
+          target="_blank"
+          rel="noopener"
+          class="px-1.5 py-0.5 rounded text-[9px] bg-[color:var(--accent-soft)] text-[color:var(--accent-soft-text)]"
+        >
+          HF
+        </a>
+      </div>
+    </article>
+  )
+}
