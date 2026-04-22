@@ -72,13 +72,15 @@ body {
 .hero-atmosphere::before {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: -10% 0 0 0;
   background:
     radial-gradient(ellipse at 18% 55%, var(--glow-cyan), transparent 48%),
     radial-gradient(ellipse at 82% 35%, var(--glow-magenta), transparent 48%),
     radial-gradient(ellipse at 70% 85%, var(--glow-amber), transparent 42%);
   z-index: -2;
   pointer-events: none;
+  transform: translate3d(0, var(--hero-parallax, 0px), 0);
+  will-change: transform;
 }
 
 .hero-atmosphere::after {
@@ -110,6 +112,12 @@ html.light .hero-atmosphere::after {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-atmosphere::before {
+    transform: none !important;
   }
 }
 

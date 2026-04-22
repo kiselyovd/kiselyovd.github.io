@@ -129,5 +129,34 @@ const i18nJson = JSON.stringify(translations);
         });
       });
     </script>
+
+    <script is:inline>
+      (function () {
+        var hero = document.getElementById('hero');
+        if (!hero) return;
+
+        var ticking = false;
+        function update() {
+          var rect = hero.getBoundingClientRect();
+          if (rect.bottom < 0) {
+            ticking = false;
+            return;
+          }
+          var y = Math.max(0, -rect.top);
+          var maxShift = 80;
+          var shift = Math.min(y * 0.18, maxShift);
+          hero.style.setProperty('--hero-parallax', '-' + shift.toFixed(1) + 'px');
+          ticking = false;
+        }
+        function onScroll() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+        update();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
+      })();
+    </script>
   </body>
 </html>
