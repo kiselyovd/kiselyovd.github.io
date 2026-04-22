@@ -10,8 +10,7 @@
     "lint": "biome check src/ *.mjs *.json",
     "lint:fix": "biome check --write src/ *.mjs *.json",
     "format": "biome format --write src/ *.mjs *.json",
-    "prepare": "lefthook install",
-    "build:portrait": "node scripts/build-portrait.mjs"
+    "prepare": "lefthook install"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
@@ -22,7 +21,6 @@
     "@astrojs/check": "^0.9.8",
     "@biomejs/biome": "^2.4.11",
     "lefthook": "^2.1.5",
-    "sharp": "^0.34.5",
     "typescript": "^6.0.2"
   }
 }

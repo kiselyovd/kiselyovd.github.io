@@ -31,6 +31,6 @@
     }
   },
   "files": {
-    "includes": ["src/**/*.{js,ts,mjs}", "scripts/**/*.mjs", "*.mjs", "*.json", "!*.astro"]
+    "includes": ["src/**/*.{js,ts,mjs}", "*.mjs", "*.json", "!*.astro"]
   }
 }
