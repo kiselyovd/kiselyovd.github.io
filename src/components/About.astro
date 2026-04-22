@@ -1,45 +1,31 @@
 ---
+const metaKeys = ['focus', 'deploy', 'industries', 'languages', 'education'] as const;
 ---
 
-<section id="about" class="py-24 px-6">
-  <div class="max-w-3xl mx-auto">
-    <div class="fade-in">
-      <p class="text-sm font-medium text-accent-500 mb-3 tracking-wide uppercase" data-i18n="about.label">About</p>
-      <h2 class="section-heading" data-i18n="about.heading">Background</h2>
+<section id="about" class="fade-in px-6 md:px-10 py-16 md:py-20 border-b border-[color:var(--border)]">
+  <span class="section-label block mb-3" data-i18n="about.label">/ About</span>
+  <h2 class="text-[22px] md:text-[28px] font-bold tracking-[-0.02em] leading-[1.1] text-[color:var(--text)] mb-6 max-w-3xl" data-i18n="about.heading">
+    Lead ML Engineer with product and presale background
+  </h2>
+
+  <div class="grid md:grid-cols-[2fr_1fr] gap-6 md:gap-10 items-start">
+    <div class="space-y-3 text-[color:var(--text-muted)] text-[13px] md:text-[14px] leading-[1.55]">
+      <p data-i18n="about.p1"></p>
+      <p data-i18n="about.p2"></p>
     </div>
 
-    <div class="fade-in mt-8 space-y-5 text-zinc-600 dark:text-zinc-400 leading-relaxed text-[17px]">
-      <p data-i18n="about.p1">
-        ML engineer focused on LLM systems, RAG, and computer vision in production. I build
-        LLM-based assistants, OCR pipelines, and multimodal document models that run in
-        real-world enterprise environments.
-      </p>
-      <p data-i18n="about.p2">
-        My work centers on deploying AI on-premise and in air-gapped environments for
-        clients in construction, oil & gas, and other industries where cloud isn't an option.
-        Models ship as production services, not just proof-of-concepts.
-      </p>
-      <p data-i18n="about.p3">
-        Former fullstack developer and team lead with a Django/React background. That
-        experience means I treat ML the same way I treat software engineering — with proper
-        architecture, testing, CI/CD, and monitoring.
-      </p>
-    </div>
-
-    <div class="fade-in mt-10 p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-800/30">
-      <div class="flex items-start gap-3">
-        <div class="mt-0.5 flex-shrink-0 w-8 h-8 rounded-lg bg-accent-500/10 flex items-center justify-center">
-          <svg class="w-4 h-4 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-        </div>
-        <div>
-          <p class="text-sm font-medium text-zinc-900 dark:text-white mb-1" data-i18n="about.current.label">Currently building</p>
-          <p class="text-sm text-zinc-600 dark:text-zinc-400" data-i18n="about.current.text">
-            Text2BIM Agent — a multi-agent LLM platform for BIM design automation in Autodesk Revit.
-          </p>
-        </div>
-      </div>
-    </div>
+    <dl class="font-mono text-[11px]">
+      {
+        metaKeys.map((k) => (
+          <div class="grid grid-cols-[90px_1fr] gap-2 py-2 border-b border-[color:var(--border)]">
+            <dt
+              class="text-[9px] uppercase tracking-[0.1em] text-[color:var(--text-subtle)] self-center"
+              data-i18n={`about.meta.${k}.label`}
+            />
+            <dd class="text-[color:var(--text)]" data-i18n={`about.meta.${k}.value`} />
+          </div>
+        ))
+      }
+    </dl>
   </div>
 </section>

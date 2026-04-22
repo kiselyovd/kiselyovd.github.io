@@ -1,0 +1,77 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import ThemeToggle from './ThemeToggle.astro';
+---
+
+<button
+  type="button"
+  id="mobile-menu-open"
+  aria-label="Open menu"
+  aria-expanded="false"
+  aria-controls="mobile-menu-panel"
+  class="md:hidden font-mono text-[14px] px-2 py-1 border border-[color:var(--border)] rounded text-[color:var(--text-muted)]"
+>
+  ≡
+</button>
+
+<div
+  id="mobile-menu-panel"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Mobile navigation"
+  class="fixed inset-0 z-50 hidden flex-col bg-[color:var(--bg)] p-8"
+>
+  <div class="flex justify-between items-center mb-12">
+    <span class="font-mono text-[12px] text-[color:var(--accent)]">kiselyov.dev</span>
+    <button
+      type="button"
+      id="mobile-menu-close"
+      aria-label="Close menu"
+      class="font-mono text-[16px] px-2 py-1 border border-[color:var(--border)] rounded text-[color:var(--text-muted)]"
+    >
+      ×
+    </button>
+  </div>
+
+  <nav class="flex flex-col gap-4 mb-12 font-mono text-[14px] uppercase tracking-[0.15em] text-[color:var(--text)]">
+    <a href="#about" data-i18n="nav.about" class="mobile-nav-link">About</a>
+    <a href="#work" data-i18n="nav.work" class="mobile-nav-link">Work</a>
+    <a href="#presale" data-i18n="nav.presale" class="mobile-nav-link">Presale</a>
+    <a href="#portfolio" data-i18n="nav.portfolio" class="mobile-nav-link">Portfolio</a>
+  </nav>
+
+  <div class="flex gap-3 items-center">
+    <LanguageSwitcher />
+    <ThemeToggle />
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var open = document.getElementById('mobile-menu-open');
+    var close = document.getElementById('mobile-menu-close');
+    var panel = document.getElementById('mobile-menu-panel');
+
+    function setOpen(isOpen) {
+      panel.classList.toggle('hidden', !isOpen);
+      panel.classList.toggle('flex', isOpen);
+      open.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    open.addEventListener('click', function () {
+      setOpen(true);
+    });
+    close.addEventListener('click', function () {
+      setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !panel.classList.contains('hidden')) setOpen(false);
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(function (a) {
+      a.addEventListener('click', function () {
+        setOpen(false);
+      });
+    });
+  })();
+</script>
