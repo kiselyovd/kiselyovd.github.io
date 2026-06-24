@@ -84,6 +84,13 @@ export const translations = {
     'port.col.task': 'Task',
     'port.col.model': 'Model',
     'port.col.metrics': 'Metrics',
+    'port.research.label': '/ Research track',
+    'port.research.heading': 'Synthetic data & monocular 3D pose',
+    'port.research.synth':
+      ' - an Unreal Engine 5 C++ plugin that captures keypoint-annotated vehicle datasets from Epic City Sample on a 24-point schema (CarFusion-14 compatible), with a cinematic generation demo and a published ',
+    'port.research.dataset': 'HF dataset',
+    'port.research.pose3d':
+      'Monocular 3D pose baseline in vehicle-keypoints: detector -> PnP (solvePnPRansac) against a canonical rigid car wireframe -> 6DoF pose, evaluated on ApolloCar3D (median rotation error 13.6 deg, 37.8% of cars within 10 deg).',
 
     'contact.label': '/ Contact',
     'contact.heading': 'Get in touch',
@@ -177,6 +184,13 @@ export const translations = {
     'port.col.task': 'Задача',
     'port.col.model': 'Модель',
     'port.col.metrics': 'Метрики',
+    'port.research.label': '/ Research-направление',
+    'port.research.heading': 'Синтетические данные и монокулярная 3D-поза',
+    'port.research.synth':
+      ' - плагин на C++ для Unreal Engine 5: снимает размеченные датасеты ключевых точек авто из Epic City Sample по 24-точечной схеме (совместимой с CarFusion-14), с кинематографичным demo-роликом генерации и опубликованным ',
+    'port.research.dataset': 'HF-датасетом',
+    'port.research.pose3d':
+      'Монокулярный 3D-baseline в vehicle-keypoints: детектор -> PnP (solvePnPRansac) по каноничному жёсткому каркасу авто -> 6DoF поза, оценка на ApolloCar3D (медианная ошибка поворота 13.6 deg, 37.8% машин в пределах 10 deg).',
 
     'contact.label': '/ Контакты',
     'contact.heading': 'На связи',

@@ -22,6 +22,7 @@ const rows = [
     model: 'YOLO26-pose',
     metrics: 'OKS-mAP 22.0%',
     hfSlug: 'vehicle-keypoints',
+    downloads: true,
   },
   {
     repo: 'cardio-risk-rf',
@@ -66,5 +67,35 @@ const rows = [
 
   <div class="md:hidden space-y-2">
     {rows.map((r) => <PortfolioRow {...r} variant="mobile" />)}
+  </div>
+
+  <div class="mt-8 rounded-md border border-[color:var(--border)] bg-[color:var(--surface)] p-4">
+    <span class="section-label block mb-2" data-i18n="port.research.label">/ Research track</span>
+    <h3 class="text-[14px] md:text-[16px] font-semibold text-[color:var(--text)] mb-3" data-i18n="port.research.heading">
+      Synthetic data &amp; monocular 3D pose
+    </h3>
+    <ul class="space-y-2 text-[12px] text-[color:var(--text-muted)] leading-[1.55] list-disc pl-4">
+      <li>
+        <a
+          href="https://github.com/kiselyovd/ue5-vehicle-synth"
+          target="_blank"
+          rel="noopener"
+          class="font-mono text-[color:var(--accent)] hover:underline"
+        >
+          ue5-vehicle-synth
+        </a>
+        <span data-i18n="port.research.synth"></span>
+        <a
+          href="https://huggingface.co/datasets/kiselyovd/citysample-vehicle-keypoints-24pt"
+          target="_blank"
+          rel="noopener"
+          class="text-[color:var(--accent)] hover:underline"
+          data-i18n="port.research.dataset"
+        >
+          HF dataset
+        </a>
+      </li>
+      <li data-i18n="port.research.pose3d"></li>
+    </ul>
   </div>
 </section>

@@ -6,10 +6,13 @@ interface Props {
   metrics: string;
   hfSlug: string;
   variant: 'desktop' | 'mobile';
+  downloads?: boolean;
 }
-const { repo, task, model, metrics, hfSlug, variant } = Astro.props;
+const { repo, task, model, metrics, hfSlug, variant, downloads = false } = Astro.props;
 const githubUrl = `https://github.com/kiselyovd/${repo}`;
 const hfUrl = `https://huggingface.co/kiselyovd/${hfSlug}`;
+// Live monthly-download badge (auto-refreshing) for the breakout model.
+const dlBadge = `https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fmodels%2Fkiselyovd%2F${hfSlug}&query=%24.downloads&label=%F0%9F%A4%97%20downloads%2Fmo&color=ffd21e&cacheSeconds=86400`;
 ---
 
 {
@@ -37,6 +40,9 @@ const hfUrl = `https://huggingface.co/kiselyovd/${hfSlug}`;
         >
           HF
         </a>
+        {downloads && (
+          <img src={dlBadge} alt="HuggingFace downloads per month" class="ml-2 inline-block align-middle h-[18px]" loading="lazy" />
+        )}
       </td>
     </tr>
   ) : (
@@ -60,6 +66,9 @@ const hfUrl = `https://huggingface.co/kiselyovd/${hfSlug}`;
         >
           HF
         </a>
+        {downloads && (
+          <img src={dlBadge} alt="HuggingFace downloads per month" class="inline-block align-middle h-[16px]" loading="lazy" />
+        )}
       </div>
     </article>
   )
