@@ -93,7 +93,8 @@ export const translations = {
       ' - a 24-point YOLO-pose model trained entirely on the synthetic renders (mAP@50 0.859 on synthetic val), proving the generated dataset is clean and learnable.',
     'port.research.pose3d':
       'Monocular 3D pose baseline in vehicle-keypoints: detector -> PnP (solvePnPRansac) against a canonical rigid car wireframe -> 6DoF pose, evaluated on ApolloCar3D (median rotation error 13.6 deg, 37.8% of cars within 10 deg).',
-    'port.research.cap.video': 'Rendered in Epic UE5 City Sample - clean -> 24-pt skeleton -> wireframe',
+    'port.research.cap.video':
+      'Rendered in Epic UE5 City Sample - clean -> 24-pt skeleton -> wireframe',
     'port.research.cap.labels': 'Synthetic labels',
     'port.research.cap.pose3d': '3D pose (PnP)',
     'port.research.cap.schema': '14-pt schema',
@@ -199,7 +200,8 @@ export const translations = {
       ' - 24-точечная YOLO-pose модель, обученная полностью на синтетических рендерах (mAP@50 0.859 на синтетическом val); доказательство, что сгенерированный датасет чист и обучаем.',
     'port.research.pose3d':
       'Монокулярный 3D-baseline в vehicle-keypoints: детектор -> PnP (solvePnPRansac) по каноничному жёсткому каркасу авто -> 6DoF поза, оценка на ApolloCar3D (медианная ошибка поворота 13.6 deg, 37.8% машин в пределах 10 deg).',
-    'port.research.cap.video': 'Рендер в Epic UE5 City Sample - чисто -> 24-точечный скелет -> каркас',
+    'port.research.cap.video':
+      'Рендер в Epic UE5 City Sample - чисто -> 24-точечный скелет -> каркас',
     'port.research.cap.labels': 'Синтетические метки',
     'port.research.cap.pose3d': '3D-поза (PnP)',
     'port.research.cap.schema': '14-точечная схема',
