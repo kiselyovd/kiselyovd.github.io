@@ -99,6 +99,14 @@ export const translations = {
     'port.research.cap.detect': 'Keypoints + bbox',
     'port.research.cap.lanes': 'Road sampling',
 
+    'flag.label': '/ Flagship application',
+    'flag.heading': 'Dungeon Master AI',
+    'flag.desc':
+      'A multimodal, AI-powered D&D desktop app built from scratch in Rust + Tauri 2 + React 19. A real server-authoritative rules engine (initiative, turn-gating, conditions, damage resistance, spell resolution), an on-device LLM runtime (mistral.rs sidecar, no cloud required) with optional cloud providers, multimodal output (DM narration + generated maps and illustrations + video), and SRD rules retrieval. Cross-platform signed bundles, 10 tagged releases, 11 CI workflows.',
+    'flag.cap.combat': 'Combat engine + VTT',
+    'flag.cap.onboarding': 'Guided hero creation',
+    'flag.cta': 'View on GitHub',
+
     'contact.label': '/ Contact',
     'contact.heading': 'Get in touch',
     'contact.sublabel': 'hiring · consulting · presale',
@@ -205,6 +213,14 @@ export const translations = {
     'port.research.cap.labels': 'Синтетические метки',
     'port.research.cap.detect': 'Точки + bbox',
     'port.research.cap.lanes': 'Дороги (ZoneGraph)',
+
+    'flag.label': '/ Флагманское приложение',
+    'flag.heading': 'Dungeon Master AI',
+    'flag.desc':
+      'Мультимодальное AI-приложение для D&D, написанное с нуля на Rust + Tauri 2 + React 19. Настоящий серверный движок правил (инициатива, контроль ходов, состояния, сопротивления урону, разрешение заклинаний), локальный LLM-рантайм (sidecar на mistral.rs, без облака) с опциональными облачными провайдерами, мультимодальный вывод (нарратив + генерация карт и иллюстраций + видео) и SRD-ретривал правил. Кроссплатформенные подписанные сборки, 10 релизов, 11 CI-workflow.',
+    'flag.cap.combat': 'Движок боя + VTT',
+    'flag.cap.onboarding': 'Создание героя',
+    'flag.cta': 'Открыть на GitHub',
 
     'contact.label': '/ Контакты',
     'contact.heading': 'На связи',
