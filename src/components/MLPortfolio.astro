@@ -20,7 +20,7 @@ const rows = [
     repo: 'vehicle-keypoints',
     task: '14-kp car pose',
     model: 'YOLO26-pose',
-    metrics: 'OKS-mAP 22.0%',
+    metrics: 'OKS-mAP 50.4%',
     hfSlug: 'vehicle-keypoints',
     downloads: true,
   },
@@ -69,11 +69,47 @@ const rows = [
     {rows.map((r) => <PortfolioRow {...r} variant="mobile" />)}
   </div>
 
-  <div class="mt-8 rounded-md border border-[color:var(--border)] bg-[color:var(--surface)] p-4">
+  <div class="mt-10 rounded-lg border border-[color:var(--border)] bg-[color:var(--surface)] p-4 md:p-6">
     <span class="section-label block mb-2" data-i18n="port.research.label">/ Research track</span>
-    <h3 class="text-[14px] md:text-[16px] font-semibold text-[color:var(--text)] mb-3" data-i18n="port.research.heading">
+    <h3 class="text-[16px] md:text-[20px] font-bold tracking-[-0.01em] text-[color:var(--text)] mb-4" data-i18n="port.research.heading">
       Synthetic data &amp; monocular 3D pose
     </h3>
+
+    <figure class="research-stage relative rounded-md overflow-hidden border border-[color:var(--border)] mb-3">
+      <video
+        src="/portfolio/synth-demo.mp4"
+        poster="/portfolio/synth-hero.png"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        class="w-full block aspect-video object-cover"
+      >
+      </video>
+      <figcaption
+        class="absolute bottom-0 left-0 right-0 px-3 py-2 font-mono text-[9px] md:text-[10px] tracking-[0.08em] uppercase text-[color:var(--text)] bg-gradient-to-t from-black/75 to-transparent"
+        data-i18n="port.research.cap.video"
+      >
+        Rendered in Epic UE5 City Sample - clean -&gt; 24-pt skeleton -&gt; wireframe
+      </figcaption>
+    </figure>
+
+    <div class="grid grid-cols-3 gap-2 md:gap-3 mb-4">
+      <figure class="research-thumb rounded-md overflow-hidden border border-[color:var(--border)]">
+        <img src="/portfolio/synth-labels.png" alt="Pixel-exact synthetic keypoint labels" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <figcaption class="px-2 py-1.5 font-mono text-[8px] md:text-[9px] tracking-[0.06em] uppercase text-[color:var(--text-subtle)]" data-i18n="port.research.cap.labels">Synthetic labels</figcaption>
+      </figure>
+      <figure class="research-thumb rounded-md overflow-hidden border border-[color:var(--border)]">
+        <img src="/portfolio/pose3d.png" alt="Monocular 3D pose via PnP" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <figcaption class="px-2 py-1.5 font-mono text-[8px] md:text-[9px] tracking-[0.06em] uppercase text-[color:var(--text-subtle)]" data-i18n="port.research.cap.pose3d">3D pose (PnP)</figcaption>
+      </figure>
+      <figure class="research-thumb rounded-md overflow-hidden border border-[color:var(--border)]">
+        <img src="/portfolio/keypoints-schema.png" alt="14-point CarFusion keypoint schema" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <figcaption class="px-2 py-1.5 font-mono text-[8px] md:text-[9px] tracking-[0.06em] uppercase text-[color:var(--text-subtle)]" data-i18n="port.research.cap.schema">14-pt schema</figcaption>
+      </figure>
+    </div>
+
     <ul class="space-y-2 text-[12px] text-[color:var(--text-muted)] leading-[1.55] list-disc pl-4">
       <li>
         <a
@@ -94,6 +130,17 @@ const rows = [
         >
           HF dataset
         </a>
+      </li>
+      <li>
+        <a
+          href="https://huggingface.co/kiselyovd/citysample-vehicle-keypoints-24pt"
+          target="_blank"
+          rel="noopener"
+          class="font-mono text-[color:var(--accent)] hover:underline"
+        >
+          citysample-vehicle-keypoints-24pt
+        </a>
+        <span data-i18n="port.research.model"></span>
       </li>
       <li data-i18n="port.research.pose3d"></li>
     </ul>
