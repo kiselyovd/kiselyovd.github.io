@@ -96,8 +96,8 @@ export const translations = {
     'port.research.cap.video':
       'Rendered in Epic UE5 City Sample - clean -> 24-pt skeleton -> wireframe',
     'port.research.cap.labels': 'Synthetic labels',
-    'port.research.cap.pose3d': '3D pose (PnP)',
-    'port.research.cap.schema': '14-pt schema',
+    'port.research.cap.detect': 'Keypoints + bbox',
+    'port.research.cap.lanes': 'Road sampling',
 
     'contact.label': '/ Contact',
     'contact.heading': 'Get in touch',
@@ -203,8 +203,8 @@ export const translations = {
     'port.research.cap.video':
       'Рендер в Epic UE5 City Sample - чисто -> 24-точечный скелет -> каркас',
     'port.research.cap.labels': 'Синтетические метки',
-    'port.research.cap.pose3d': '3D-поза (PnP)',
-    'port.research.cap.schema': '14-точечная схема',
+    'port.research.cap.detect': 'Точки + bbox',
+    'port.research.cap.lanes': 'Дороги (ZoneGraph)',
 
     'contact.label': '/ Контакты',
     'contact.heading': 'На связи',

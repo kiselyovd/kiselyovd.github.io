@@ -75,39 +75,41 @@ const rows = [
       Synthetic data &amp; monocular 3D pose
     </h3>
 
-    <figure class="research-stage relative rounded-md overflow-hidden border border-[color:var(--border)] mb-3">
-      <video
-        src="/portfolio/synth-demo.mp4"
-        poster="/portfolio/synth-hero.png"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        class="w-full block aspect-video object-cover"
-      >
-      </video>
-      <figcaption
-        class="absolute bottom-0 left-0 right-0 px-3 py-2 font-mono text-[9px] md:text-[10px] tracking-[0.08em] uppercase text-[color:var(--text)] bg-gradient-to-t from-black/75 to-transparent"
-        data-i18n="port.research.cap.video"
-      >
-        Rendered in Epic UE5 City Sample - clean -&gt; 24-pt skeleton -&gt; wireframe
-      </figcaption>
-    </figure>
+    <div class="max-w-3xl mx-auto mb-5">
+      <figure class="research-stage relative rounded-md overflow-hidden border border-[color:var(--border)] mb-2.5">
+        <video
+          src="/portfolio/synth-demo.mp4"
+          poster="/portfolio/synth-hero.jpg"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          class="w-full block aspect-video object-cover"
+        >
+        </video>
+        <figcaption
+          class="absolute bottom-0 left-0 right-0 px-3 py-2 font-mono text-[9px] md:text-[10px] tracking-[0.08em] uppercase text-[color:var(--text)] bg-gradient-to-t from-black/75 to-transparent"
+          data-i18n="port.research.cap.video"
+        >
+          Rendered in Epic UE5 City Sample - clean -&gt; 24-pt skeleton -&gt; wireframe
+        </figcaption>
+      </figure>
 
-    <div class="grid grid-cols-3 gap-2 md:gap-3 mb-4">
-      <figure class="research-thumb rounded-md overflow-hidden border border-[color:var(--border)]">
-        <img src="/portfolio/synth-labels.png" alt="Pixel-exact synthetic keypoint labels" loading="lazy" class="w-full aspect-[4/3] object-cover" />
-        <figcaption class="px-2 py-1.5 font-mono text-[8px] md:text-[9px] tracking-[0.06em] uppercase text-[color:var(--text-subtle)]" data-i18n="port.research.cap.labels">Synthetic labels</figcaption>
-      </figure>
-      <figure class="research-thumb rounded-md overflow-hidden border border-[color:var(--border)]">
-        <img src="/portfolio/pose3d.png" alt="Monocular 3D pose via PnP" loading="lazy" class="w-full aspect-[4/3] object-cover" />
-        <figcaption class="px-2 py-1.5 font-mono text-[8px] md:text-[9px] tracking-[0.06em] uppercase text-[color:var(--text-subtle)]" data-i18n="port.research.cap.pose3d">3D pose (PnP)</figcaption>
-      </figure>
-      <figure class="research-thumb rounded-md overflow-hidden border border-[color:var(--border)]">
-        <img src="/portfolio/keypoints-schema.png" alt="14-point CarFusion keypoint schema" loading="lazy" class="w-full aspect-[4/3] object-cover" />
-        <figcaption class="px-2 py-1.5 font-mono text-[8px] md:text-[9px] tracking-[0.06em] uppercase text-[color:var(--text-subtle)]" data-i18n="port.research.cap.schema">14-pt schema</figcaption>
-      </figure>
+      <div class="grid grid-cols-3 gap-2 md:gap-2.5">
+        <figure class="research-thumb rounded-md overflow-hidden border border-[color:var(--border)]">
+          <img src="/portfolio/calibration.jpg" alt="Predicted bounding box and keypoints on a synthetic vehicle" loading="lazy" class="w-full aspect-[16/10] object-cover" />
+          <figcaption class="px-2 py-1.5 font-mono text-[8px] md:text-[9px] tracking-[0.06em] uppercase text-[color:var(--text-subtle)]" data-i18n="port.research.cap.detect">Keypoints + bbox</figcaption>
+        </figure>
+        <figure class="research-thumb rounded-md overflow-hidden border border-[color:var(--border)]">
+          <img src="/portfolio/zonegraph.jpg" alt="Top-down road-lane sampling across the City Sample map" loading="lazy" class="w-full aspect-[16/10] object-cover" />
+          <figcaption class="px-2 py-1.5 font-mono text-[8px] md:text-[9px] tracking-[0.06em] uppercase text-[color:var(--text-subtle)]" data-i18n="port.research.cap.lanes">Road sampling</figcaption>
+        </figure>
+        <figure class="research-thumb rounded-md overflow-hidden border border-[color:var(--border)]">
+          <img src="/portfolio/synth-labels.jpg" alt="Pixel-exact synthetic keypoint labels" loading="lazy" class="w-full aspect-[16/10] object-cover" />
+          <figcaption class="px-2 py-1.5 font-mono text-[8px] md:text-[9px] tracking-[0.06em] uppercase text-[color:var(--text-subtle)]" data-i18n="port.research.cap.labels">Synthetic labels</figcaption>
+        </figure>
+      </div>
     </div>
 
     <ul class="space-y-2 text-[12px] text-[color:var(--text-muted)] leading-[1.55] list-disc pl-4">
