@@ -16,7 +16,7 @@ export const translations = {
     'hero.fact2.label': 'enterprise AI systems',
     'hero.fact3.value': '10+',
     'hero.fact3.label': 'presales led',
-    'hero.fact4.value': '5',
+    'hero.fact4.value': '6',
     'hero.fact4.label': 'open-source ML repos',
     'hero.cta.primary': 'View work',
     'hero.cta.secondary': 'GitHub',
@@ -44,7 +44,7 @@ export const translations = {
     'ent.card1.role': 'Full-stack · solo',
     'ent.card1.title': 'Multi-platform AI for BIM design',
     'ent.card1.desc':
-      'Production with 160+ engineers. Scenario Engine (n8n-style DAG with LLM-aware nodes, versioning, rollback), Tauri 2 desktop, FastAPI backend, C# Revit plugin with a custom MCP protocol.',
+      'Production with 160+ engineers. Scenario Engine (n8n-style DAG with LLM-aware nodes, versioning, rollback), Tauri v2 desktop, FastAPI backend, C# Revit plugin with a custom MCP protocol.',
     'ent.card2.category': 'Visual RAG',
     'ent.card2.role': 'Solo · 3 clients',
     'ent.card2.title': 'Visual RAG for engineering docs',
@@ -77,18 +77,23 @@ export const translations = {
       'interviews under LLM + RecSys; two candidates accepted by the client. ML mentoring for external teams on speech pipelines and low-resource TTS/ASR.',
 
     'port.label': '/ Open-source ML portfolio',
-    'port.heading': 'Five production-grade ML repos on a shared template',
+    'port.heading': 'Six production-grade open-source ML repos on a shared template',
     'port.intro':
       'PyTorch Lightning · Hydra · MLflow · DVC · FastAPI · Docker · GitHub Actions · MkDocs · HuggingFace Hub. Every repo: CI, HF model card with widget, DVC-tracked artefacts, bilingual README, full quality gates.',
     'port.col.repo': 'Repo',
     'port.col.task': 'Task',
     'port.col.model': 'Model',
     'port.col.metrics': 'Metrics',
+    'port.template.prefix': 'All five models are generated from a shared cookiecutter scaffold,',
+    'port.template.suffix':
+      ', which wires the CI, quality gates, Docker, and docs pipeline before any model code is written.',
     'port.research.label': '/ Research track',
     'port.research.heading': 'Synthetic data & monocular 3D pose',
     'port.research.synth':
       ' - an Unreal Engine 5 C++ plugin that captures keypoint-annotated vehicle datasets from Epic City Sample on a 24-point schema (CarFusion-14 compatible), with a cinematic generation demo and a published ',
     'port.research.dataset': 'HF dataset',
+    'port.research.docs.sep': ' · ',
+    'port.research.docs': 'Docs',
     'port.research.model':
       ' - a 24-point YOLO-pose model trained entirely on the synthetic renders (mAP@50 0.859 on synthetic val), proving the generated dataset is clean and learnable.',
     'port.research.pose3d':
@@ -102,10 +107,11 @@ export const translations = {
     'flag.label': '/ Flagship application',
     'flag.heading': 'Dungeon Master AI',
     'flag.desc':
-      'A multimodal, AI-powered D&D desktop app built from scratch in Rust + Tauri 2 + React 19. A real server-authoritative rules engine (initiative, turn-gating, conditions, damage resistance, spell resolution), an on-device LLM runtime (mistral.rs sidecar, no cloud required) with optional cloud providers, multimodal output (DM narration + generated maps and illustrations + video), and SRD rules retrieval. Cross-platform signed bundles, 10 tagged releases, 11 CI workflows.',
+      'A multimodal, AI-powered D&D desktop app built from scratch in Rust + Tauri v2 + React 19. A real server-authoritative rules engine (initiative, turn-gating, conditions, damage resistance, spell resolution), an on-device LLM runtime (mistral.rs sidecar, no cloud required) with optional cloud providers, multimodal output (DM narration + generated maps and illustrations + video), and SRD rules retrieval. Cross-platform signed bundles, 10 tagged releases, 11 CI workflows.',
     'flag.cap.combat': 'Combat engine + VTT',
     'flag.cap.onboarding': 'Guided hero creation',
     'flag.cta': 'View on GitHub',
+    'flag.cta.releases': 'Releases',
 
     'contact.label': '/ Contact',
     'contact.heading': 'Get in touch',
@@ -131,7 +137,7 @@ export const translations = {
     'hero.fact2.label': 'enterprise AI-системы',
     'hero.fact3.value': '10+',
     'hero.fact3.label': 'пресейлов',
-    'hero.fact4.value': '5',
+    'hero.fact4.value': '6',
     'hero.fact4.label': 'open-source ML-репо',
     'hero.cta.primary': 'Смотреть работы',
     'hero.cta.secondary': 'GitHub',
@@ -159,7 +165,7 @@ export const translations = {
     'ent.card1.role': 'Full-stack · соло',
     'ent.card1.title': 'Мультиплатформенная AI-система для BIM-проектирования',
     'ent.card1.desc':
-      'Продакшен, 160+ инженеров. Scenario Engine (визуальный DAG с LLM-нодами, версионирование, rollback), Tauri 2 desktop, FastAPI, C# плагин для Revit с собственным MCP-протоколом.',
+      'Продакшен, 160+ инженеров. Scenario Engine (визуальный DAG с LLM-нодами, версионирование, rollback), Tauri v2 desktop, FastAPI, C# плагин для Revit с собственным MCP-протоколом.',
     'ent.card2.category': 'Visual RAG',
     'ent.card2.role': 'Соло · 3 заказчика',
     'ent.card2.title': 'Visual RAG для инженерной документации',
@@ -192,18 +198,23 @@ export const translations = {
       'интервью под связку LLM + RecSys; 2 кандидата приняты заказчиком. ML-менторинг внешних команд по речевым пайплайнам и low-resource TTS/ASR.',
 
     'port.label': '/ Open-source ML-портфолио',
-    'port.heading': 'Пять production-grade ML-репо на общем шаблоне',
+    'port.heading': 'Шесть production-grade open-source ML-репо на общем шаблоне',
     'port.intro':
       'PyTorch Lightning · Hydra · MLflow · DVC · FastAPI · Docker · GitHub Actions · MkDocs · HuggingFace Hub. Каждый репо: CI, HF-карточка с виджетом, DVC-артефакты, bilingual README, полный стек quality gates.',
     'port.col.repo': 'Репо',
     'port.col.task': 'Задача',
     'port.col.model': 'Модель',
     'port.col.metrics': 'Метрики',
+    'port.template.prefix': 'Все пять моделей сгенерированы из общего cookiecutter-шаблона',
+    'port.template.suffix':
+      ', который поднимает CI, quality gates, Docker и docs-пайплайн ещё до первой строки кода модели.',
     'port.research.label': '/ Research-направление',
     'port.research.heading': 'Синтетические данные и монокулярная 3D-поза',
     'port.research.synth':
       ' - плагин на C++ для Unreal Engine 5: снимает размеченные датасеты ключевых точек авто из Epic City Sample по 24-точечной схеме (совместимой с CarFusion-14), с кинематографичным demo-роликом генерации и опубликованным ',
     'port.research.dataset': 'HF-датасетом',
+    'port.research.docs.sep': ' · ',
+    'port.research.docs': 'Docs',
     'port.research.model':
       ' - 24-точечная YOLO-pose модель, обученная полностью на синтетических рендерах (mAP@50 0.859 на синтетическом val); доказательство, что сгенерированный датасет чист и обучаем.',
     'port.research.pose3d':
@@ -217,10 +228,11 @@ export const translations = {
     'flag.label': '/ Флагманское приложение',
     'flag.heading': 'Dungeon Master AI',
     'flag.desc':
-      'Мультимодальное AI-приложение для D&D, написанное с нуля на Rust + Tauri 2 + React 19. Настоящий серверный движок правил (инициатива, контроль ходов, состояния, сопротивления урону, разрешение заклинаний), локальный LLM-рантайм (sidecar на mistral.rs, без облака) с опциональными облачными провайдерами, мультимодальный вывод (нарратив + генерация карт и иллюстраций + видео) и SRD-ретривал правил. Кроссплатформенные подписанные сборки, 10 релизов, 11 CI-workflow.',
+      'Мультимодальное AI-приложение для D&D, написанное с нуля на Rust + Tauri v2 + React 19. Настоящий серверный движок правил (инициатива, контроль ходов, состояния, сопротивления урону, разрешение заклинаний), локальный LLM-рантайм (sidecar на mistral.rs, без облака) с опциональными облачными провайдерами, мультимодальный вывод (нарратив + генерация карт и иллюстраций + видео) и SRD-ретривал правил. Кроссплатформенные подписанные сборки, 10 релизов, 11 CI-workflow.',
     'flag.cap.combat': 'Движок боя + VTT',
     'flag.cap.onboarding': 'Создание героя',
     'flag.cta': 'Открыть на GitHub',
+    'flag.cta.releases': 'Релизы',
 
     'contact.label': '/ Контакты',
     'contact.heading': 'На связи',

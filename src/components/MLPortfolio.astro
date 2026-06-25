@@ -47,7 +47,7 @@ const rows = [
     class="text-[22px] md:text-[28px] font-bold tracking-[-0.02em] leading-[1.1] text-[color:var(--text)] mb-3 max-w-3xl"
     data-i18n="port.heading"
   >
-    Five production-grade ML repos on a shared template
+    Six production-grade open-source ML repos on a shared template
   </h2>
   <p class="text-[12px] md:text-[13px] text-[color:var(--text-muted)] leading-[1.55] mb-6 max-w-3xl" data-i18n="port.intro"></p>
 
@@ -68,6 +68,19 @@ const rows = [
   <div class="md:hidden space-y-2">
     {rows.map((r) => <PortfolioRow {...r} variant="mobile" />)}
   </div>
+
+  <p class="mt-6 text-[12px] md:text-[13px] text-[color:var(--text-muted)] leading-[1.55] max-w-3xl">
+    <span data-i18n="port.template.prefix">All five models are generated from a shared cookiecutter scaffold,</span>
+    <a
+      href="https://github.com/kiselyovd/ml-project-template"
+      target="_blank"
+      rel="noopener"
+      class="font-mono text-[color:var(--accent)] hover:underline"
+    >
+      ml-project-template
+    </a>
+    <span data-i18n="port.template.suffix">, which wires the CI, quality gates, Docker, and docs pipeline before any model code is written.</span>
+  </p>
 
   <div class="mt-10 rounded-lg border border-[color:var(--border)] bg-[color:var(--surface)] p-4 md:p-6">
     <span class="section-label block mb-2" data-i18n="port.research.label">/ Research track</span>
@@ -131,6 +144,16 @@ const rows = [
           data-i18n="port.research.dataset"
         >
           HF dataset
+        </a>
+        <span data-i18n="port.research.docs.sep"> · </span>
+        <a
+          href="https://kiselyovd.github.io/ue5-vehicle-synth/"
+          target="_blank"
+          rel="noopener"
+          class="text-[color:var(--accent)] hover:underline"
+          data-i18n="port.research.docs"
+        >
+          Docs
         </a>
       </li>
       <li>
