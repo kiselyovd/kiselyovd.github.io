@@ -1,6 +1,6 @@
 # kiselyovd.github.io
 
-Personal portfolio website — [kiselyovd.github.io](https://kiselyovd.github.io)
+Personal portfolio website - [kiselyovd.github.io](https://kiselyovd.github.io)
 
 ## Tech Stack
 
