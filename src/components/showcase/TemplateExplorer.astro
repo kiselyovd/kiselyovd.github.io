@@ -1,0 +1,79 @@
+---
+import data from '../../data/template-showcase.json';
+import { buildScaffold } from '../../lib/scaffold';
+const serialized = JSON.stringify(data).replaceAll('<', '\\u003c');
+const initial = buildScaffold(data, { slug: 'research-demo', preset: 'classification', serving: true, python: '3.13' });
+---
+
+<section id="template-explorer" data-owner="kiselyovd" aria-label="ML Project Template scaffold explorer">
+  <div class="showcase-toolbar">
+    <label class="showcase-field"><span data-i18n="sc.task">Task preset</span><select name="task" aria-label="Task preset" data-i18n-aria="sc.task">
+      {data.presets.map((preset) => <option value={preset.id} data-i18n={`sc.task.${preset.id}`}>{preset.id}</option>)}
+    </select></label>
+    <label class="showcase-field"><span data-i18n="sc.slug">Project slug</span><input name="slug" aria-label="Project slug" data-i18n-aria="sc.slug" value="research-demo" minlength="2" maxlength="50" /></label>
+    <label class="showcase-field"><span>Python</span><select name="python" aria-label="Python version" data-i18n-aria="sc.python">{data.python_versions.map((version) => <option>{version}</option>)}</select></label>
+    <label class="showcase-check"><input name="serving" type="checkbox" checked /><span data-i18n="sc.serving">Include API serving</span></label>
+  </div>
+  <div class="showcase-grid">
+    <section class="showcase-panel">
+      <h2 data-i18n="sc.command">Generation command</h2>
+      <pre class="showcase-code" data-command>{initial.command}</pre>
+      <button type="button" class="showcase-button" data-copy data-i18n="sc.copy">Copy command</button>
+      <p class="showcase-live" role="status" data-live></p>
+      <p class="showcase-note" data-i18n="sc.scaffold.note">The command creates a project scaffold. Training, model-specific prediction code, and data preparation remain part of your project.</p>
+    </section>
+    <section class="showcase-panel">
+      <h2 data-i18n="sc.files">What changes in the scaffold</h2>
+      <p class="showcase-note" data-framework>pytorch · research_demo</p>
+      <ul class="showcase-tree" data-tree><li>configs/</li><li>src/research_demo/</li><li>tests/</li><li>docs/</li></ul>
+      <p class="showcase-note" data-i18n="sc.files.note">The file choices follow the template's post-generation hooks. Crossed-out paths are removed for the selected preset.</p>
+    </section>
+  </div>
+  <script type="application/json" id="template-data" is:inline set:html={serialized}></script>
+</section>
+
+<script>
+  import { buildScaffold, type TemplateData } from '../../lib/scaffold';
+  import { translations, type TranslationKey } from '../../i18n/translations';
+  const root = document.getElementById('template-explorer');
+  if (root) {
+    const data = JSON.parse(document.getElementById('template-data')?.textContent || '{}') as TemplateData;
+    const task = root.querySelector<HTMLSelectElement>('[name="task"]')!;
+    const slug = root.querySelector<HTMLInputElement>('[name="slug"]')!;
+    const python = root.querySelector<HTMLSelectElement>('[name="python"]')!;
+    const serving = root.querySelector<HTMLInputElement>('[name="serving"]')!;
+    const command = root.querySelector<HTMLElement>('[data-command]')!;
+    const live = root.querySelector<HTMLElement>('[data-live]')!;
+    const tree = root.querySelector<HTMLElement>('[data-tree]')!;
+    const framework = root.querySelector<HTMLElement>('[data-framework]')!;
+    const copyButton = root.querySelector<HTMLButtonElement>('[data-copy]')!;
+    const debug = new URLSearchParams(location.search).get('debug') === '1';
+    let output = '';
+    const text = (key: TranslationKey) => translations[document.documentElement.lang === 'ru' ? 'ru' : 'en'][key];
+    function update() {
+      try {
+        const result = buildScaffold(data, { slug: slug.value, preset: task.value, serving: serving.checked, python: python.value });
+        output = result.command.replaceAll('\n  ', ' ');
+        command.textContent = result.command;
+        framework.textContent = `${result.framework} · ${result.packageName}`;
+        slug.setAttribute('aria-invalid', 'false');
+        copyButton.disabled = false;
+        live.textContent = text('sc.ready');
+        const interesting = result.files.filter((path) => /models\/|data\/datamodule|serving\/|test_serving|docker-compose/.test(path));
+        tree.replaceChildren(...interesting.map((path) => { const li = document.createElement('li'); li.textContent = path; li.className = result.removed.includes(path) ? 'removed' : 'kept'; return li; }));
+        if (debug) console.debug('[showcase] scaffold:update', { task: task.value, serving: serving.checked, python: python.value });
+      } catch {
+        output = ''; copyButton.disabled = true; slug.setAttribute('aria-invalid', 'true');
+        live.textContent = text('sc.invalid');
+      }
+    }
+    for (const field of [task, slug, python, serving]) field.addEventListener('input', update);
+    document.addEventListener('langchange', update);
+    copyButton.addEventListener('click', async () => {
+      if (!output) return;
+      try { await navigator.clipboard.writeText(output); live.textContent = text('sc.copied'); }
+      catch { live.textContent = text('sc.copy.fallback'); }
+    });
+    update();
+  }
+</script>

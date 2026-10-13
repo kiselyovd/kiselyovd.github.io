@@ -1,5 +1,57 @@
 export const translations = {
   en: {
+    'sc.back': 'Portfolio',
+    'sc.source': 'Source',
+    'sc.task': 'Task preset',
+    'sc.slug': 'Project slug',
+    'sc.python': 'Python version',
+    'sc.serving': 'Include API serving',
+    'sc.command': 'Generation command',
+    'sc.copy': 'Copy command',
+    'sc.files': 'What changes in the scaffold',
+    'sc.ready': 'Ready to copy. Framework and paths follow the selected preset.',
+    'sc.invalid': 'Use 2–50 lowercase letters, digits, and hyphens; start with a letter.',
+    'sc.copied': 'Command copied.',
+    'sc.copy.fallback': 'Select the command above and copy it from your browser.',
+    'sc.task.classification': 'Image classification',
+    'sc.task.segmentation': 'Image segmentation',
+    'sc.task.keypoints': 'Keypoint detection',
+    'sc.task.tabular': 'Tabular classification',
+    'sc.task.nlp': 'Text classification',
+    'sc.scaffold.note':
+      'The command creates a project scaffold. Training, model-specific prediction code, and data preparation remain part of your project.',
+    'sc.files.note':
+      "The file choices follow the template's post-generation hooks. Crossed-out paths are removed for the selected preset.",
+    'sc.template.intro':
+      'See how a task preset changes a reproducible ML scaffold. Choose the task, Python version, and API serving; the command and file choices follow the real template.',
+    'sc.template.provenance':
+      "The five presets match the template's canonical test contexts. The framework follows the task; generation and training run in your own environment.",
+    'sc.combat': 'Combat and tabletop',
+    'sc.character': 'Character creation',
+    'sc.combat.caption':
+      "Published combat screen: initiative, the tabletop, and the DM's game-tool result. Default actor in this example: Hero.",
+    'sc.combat.title': 'An action reaches the rules engine',
+    'sc.combat.description':
+      'The DM combines narration and tool calls. Combat state, turn order, damage, and conditions belong to the backend; the interface presents that state.',
+    'sc.character.caption':
+      'Published character-creation screen with class presets and character art.',
+    'sc.character.title': 'A character enters the campaign',
+    'sc.character.description':
+      'Choose a preset hero or create a character. The application records the combat attributes and carries that character into the campaign.',
+    'sc.tour.note':
+      'This tour uses the two screenshots already published with the project. Open the release to try a campaign.',
+    'sc.code': 'Open the source',
+    'sc.release': 'Try the published milestone',
+    'sc.platform': 'Platform',
+    'sc.assets': 'Open release assets',
+    'sc.release.note':
+      'Release v0.12.0-real-engine publishes Windows, macOS Apple silicon, and Linux installers. Filenames retain package version 0.1.0. Signing and notarization are optional workflow steps; local model mode needs compatible sidecars.',
+    'sc.dungeon.intro':
+      'A solo D&D desktop application with an AI Dungeon Master, a rules engine, a virtual tabletop, and persistent campaigns. Explore the published screens and the path to trying the release.',
+    'sc.dungeon.provenance':
+      'The screenshots are presentation evidence from the published project. Installer signatures, platform behavior, and local-model compatibility require the relevant release checks.',
+    'flag.cta.tour': 'Explore the product tour',
+    'port.template.explorer': 'Explore the scaffold',
     'nav.about': 'About',
     'nav.work': 'Work',
     'nav.presale': 'Presale',
@@ -77,7 +129,7 @@ export const translations = {
       'interviews under LLM + RecSys; two candidates accepted by the client. ML mentoring for external teams on speech pipelines and low-resource TTS/ASR.',
 
     'port.label': '/ Open-source ML portfolio',
-    'port.heading': 'Six production-grade open-source ML repos on a shared template',
+    'port.heading': 'Applied ML projects and the engineering scaffold behind them',
     'port.intro':
       'PyTorch Lightning · Hydra · MLflow · DVC · FastAPI · Docker · GitHub Actions · MkDocs · HuggingFace Hub. Every repo: CI, HF model card with widget, DVC-tracked artefacts, bilingual README, full quality gates.',
     'port.col.repo': 'Repo',
@@ -107,7 +159,7 @@ export const translations = {
     'flag.label': '/ Flagship application',
     'flag.heading': 'Dungeon Master AI',
     'flag.desc':
-      'A multimodal, AI-powered D&D desktop app built from scratch in Rust + Tauri v2 + React 19. A real server-authoritative rules engine (initiative, turn-gating, conditions, damage resistance, spell resolution), an on-device LLM runtime (mistral.rs sidecar, no cloud required) with optional cloud providers, multimodal output (DM narration + generated maps and illustrations + video), and SRD rules retrieval. Cross-platform signed bundles, 10 tagged releases, 11 CI workflows.',
+      'A D&D desktop application with server-authoritative combat, persistent campaigns, local and cloud model paths, and SRD rules retrieval. Explore the published interface and platform-specific release assets.',
     'flag.cap.combat': 'Combat engine + VTT',
     'flag.cap.onboarding': 'Guided hero creation',
     'flag.cta': 'View on GitHub',
@@ -121,6 +173,57 @@ export const translations = {
   },
 
   ru: {
+    'sc.back': 'Портфолио',
+    'sc.source': 'Источник',
+    'sc.task': 'Тип задачи',
+    'sc.slug': 'Имя проекта',
+    'sc.python': 'Версия Python',
+    'sc.serving': 'Добавить API',
+    'sc.command': 'Команда генерации',
+    'sc.copy': 'Скопировать команду',
+    'sc.files': 'Что меняется в структуре',
+    'sc.ready': 'Можно копировать. Framework и пути соответствуют выбранной задаче.',
+    'sc.invalid': 'Используй 2–50 строчных латинских букв, цифр и дефисов; начни с буквы.',
+    'sc.copied': 'Команда скопирована.',
+    'sc.copy.fallback': 'Выдели команду выше и скопируй её в браузере.',
+    'sc.task.classification': 'Классификация изображений',
+    'sc.task.segmentation': 'Сегментация изображений',
+    'sc.task.keypoints': 'Ключевые точки',
+    'sc.task.tabular': 'Табличная классификация',
+    'sc.task.nlp': 'Классификация текстов',
+    'sc.scaffold.note':
+      'Команда создаёт каркас проекта. Обучение, код предсказания для конкретной модели и подготовка данных остаются задачами проекта.',
+    'sc.files.note':
+      'Выбор файлов следует реальным post-generation hooks. Перечёркнутые пути удаляются для выбранного варианта.',
+    'sc.template.intro':
+      'Посмотри, как тип задачи меняет воспроизводимый ML-каркас. Выбери задачу, Python и API: команда и набор файлов следуют реальному шаблону.',
+    'sc.template.provenance':
+      'Пять вариантов соответствуют canonical test contexts шаблона. Framework зависит от задачи; генерация и обучение запускаются в твоём окружении.',
+    'sc.combat': 'Бой и игровой стол',
+    'sc.character': 'Создание героя',
+    'sc.combat.caption':
+      'Опубликованный экран боя: инициатива, игровой стол и результат инструмента ведущего. Персонаж этого примера: Hero.',
+    'sc.combat.title': 'Действие попадает в движок правил',
+    'sc.combat.description':
+      'Ведущий соединяет рассказ и вызовы игровых инструментов. Состояние боя, порядок ходов, урон и состояния персонажей обрабатывает backend; интерфейс показывает это состояние.',
+    'sc.character.caption': 'Опубликованный экран создания героя с классами и иллюстрациями.',
+    'sc.character.title': 'Герой входит в кампанию',
+    'sc.character.description':
+      'Выбери готового героя или создай персонажа. Приложение сохраняет боевые характеристики и использует этого героя в кампании.',
+    'sc.tour.note':
+      'В туре показаны два экрана, уже опубликованные с проектом. Попробовать кампанию можно в релизе.',
+    'sc.code': 'Открыть исходники',
+    'sc.release': 'Попробовать опубликованную версию',
+    'sc.platform': 'Платформа',
+    'sc.assets': 'Открыть файлы релиза',
+    'sc.release.note':
+      'В v0.12.0-real-engine опубликованы установщики Windows, macOS Apple silicon и Linux. В именах файлов остаётся package version 0.1.0. Подпись и нотариализация — опциональные шаги workflow; локальные модели требуют совместимых sidecars.',
+    'sc.dungeon.intro':
+      'Desktop-приложение для одиночной D&D: AI-ведущий, движок правил, игровой стол и сохранённые кампании. Посмотри опубликованные экраны и выбери путь к запуску релиза.',
+    'sc.dungeon.provenance':
+      'Снимки показывают опубликованный интерфейс проекта. Подписи установщиков, поведение платформ и совместимость локальных моделей требуют соответствующих проверок релиза.',
+    'flag.cta.tour': 'Посмотреть интерфейс',
+    'port.template.explorer': 'Исследовать структуру шаблона',
     'nav.about': 'Обо мне',
     'nav.work': 'Работы',
     'nav.presale': 'Пресейл',
@@ -198,7 +301,7 @@ export const translations = {
       'интервью под связку LLM + RecSys; 2 кандидата приняты заказчиком. ML-менторинг внешних команд по речевым пайплайнам и low-resource TTS/ASR.',
 
     'port.label': '/ Open-source ML-портфолио',
-    'port.heading': 'Шесть production-grade open-source ML-репо на общем шаблоне',
+    'port.heading': 'Прикладные ML-проекты и общий инженерный каркас',
     'port.intro':
       'PyTorch Lightning · Hydra · MLflow · DVC · FastAPI · Docker · GitHub Actions · MkDocs · HuggingFace Hub. Каждый репо: CI, HF-карточка с виджетом, DVC-артефакты, bilingual README, полный стек quality gates.',
     'port.col.repo': 'Репо',
@@ -228,7 +331,7 @@ export const translations = {
     'flag.label': '/ Флагманское приложение',
     'flag.heading': 'Dungeon Master AI',
     'flag.desc':
-      'Мультимодальное AI-приложение для D&D, написанное с нуля на Rust + Tauri v2 + React 19. Настоящий серверный движок правил (инициатива, контроль ходов, состояния, сопротивления урону, разрешение заклинаний), локальный LLM-рантайм (sidecar на mistral.rs, без облака) с опциональными облачными провайдерами, мультимодальный вывод (нарратив + генерация карт и иллюстраций + видео) и SRD-ретривал правил. Кроссплатформенные подписанные сборки, 10 релизов, 11 CI-workflow.',
+      'D&D desktop-приложение с серверным движком боя, сохранёнными кампаниями, локальными и облачными моделями и поиском по правилам SRD. Посмотри опубликованный интерфейс и файлы релиза для своей платформы.',
     'flag.cap.combat': 'Движок боя + VTT',
     'flag.cap.onboarding': 'Создание героя',
     'flag.cta': 'Открыть на GitHub',

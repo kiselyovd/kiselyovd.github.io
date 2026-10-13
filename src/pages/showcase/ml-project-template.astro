@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ShowcaseHeader from '../../components/showcase/ShowcaseHeader.astro';
+import TemplateExplorer from '../../components/showcase/TemplateExplorer.astro';
+import data from '../../data/template-showcase.json';
+import '../../styles/showcase.css';
+---
+
+<Layout title="ML Project Template — Scaffold Explorer" description="Explore the real Cookiecutter presets, project structure, and generation commands of kiselyovd's ML Project Template.">
+  <ShowcaseHeader />
+  <main class="showcase-page">
+    <h1>ML Project Template</h1>
+    <p class="showcase-intro" data-i18n="sc.template.intro">See how a task preset changes a reproducible ML scaffold. Choose the task, Python version, and API serving; the command and file choices follow the real template.</p>
+    <TemplateExplorer />
+    <div class="showcase-sources">
+      <p><span data-i18n="sc.source">Source</span>: <a href={data.source}>cookiecutter.json</a> · <a href={data.hook_source}>post-generation hooks</a> · <a href="https://github.com/kiselyovd/ml-project-template">kiselyovd/ml-project-template</a></p>
+      <p data-i18n="sc.template.provenance">The five presets match the template's canonical test contexts. The framework is determined by the task; this explorer does not run generation or training in the browser.</p>
+    </div>
+  </main>
+</Layout>

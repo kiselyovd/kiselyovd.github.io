@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ShowcaseHeader from '../../components/showcase/ShowcaseHeader.astro';
+import DungeonTour from '../../components/showcase/DungeonTour.astro';
+import '../../styles/showcase.css';
+---
+
+<Layout title="Dungeon Master AI — Product Tour" description="A source-labelled tour of Dungeon Master AI: character creation, server-authoritative combat, and published desktop release assets.">
+  <ShowcaseHeader />
+  <main class="showcase-page">
+    <h1>Dungeon Master AI</h1>
+    <p class="showcase-intro" data-i18n="sc.dungeon.intro">A solo D&D desktop application with an AI Dungeon Master, a rules engine, a virtual tabletop, and persistent campaigns. Explore the published screens and the path to trying the release.</p>
+    <DungeonTour />
+    <div class="showcase-sources">
+      <p><span data-i18n="sc.source">Source</span>: <a href="https://github.com/kiselyovd/dungeon-master-ai/blob/main/CHANGELOG.md">Changelog</a> · <a href="https://github.com/kiselyovd/dungeon-master-ai/blob/main/docs/RELEASE.md">Release pipeline</a> · <a href="https://github.com/kiselyovd/dungeon-master-ai/releases/tag/v0.12.0-real-engine">v0.12.0-real-engine</a></p>
+      <p data-i18n="sc.dungeon.provenance">The screenshots are presentation evidence from the published project. Installer signatures, platform behavior, and local-model compatibility require the relevant release checks.</p>
+    </div>
+  </main>
+</Layout>

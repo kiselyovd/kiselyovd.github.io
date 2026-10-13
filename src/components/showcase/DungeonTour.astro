@@ -1,0 +1,70 @@
+---
+---
+
+<section class="showcase-tour" id="dungeon-tour" data-owner="kiselyovd" data-default-actor="Hero" aria-label="Dungeon Master AI screenshot tour">
+  <div class="showcase-screen-actions">
+    <button class="showcase-button" type="button" data-screen="combat" aria-pressed="true" data-i18n="sc.combat">Combat and tabletop</button>
+    <button class="showcase-button" type="button" data-screen="onboarding" aria-pressed="false" data-i18n="sc.character">Character creation</button>
+  </div>
+  <div class="showcase-grid">
+    <figure>
+      <img data-tour-image src="/portfolio/dm-ai-combat.jpg" alt="Published Dungeon Master AI combat interface with Hero, Skeleton A, and Skeleton B" />
+      <figcaption data-tour-caption data-i18n="sc.combat.caption">Published combat screen: initiative, the tabletop, and the DM's game-tool result. Default actor in this example: Hero.</figcaption>
+    </figure>
+    <div class="showcase-tour-details">
+      <h2 data-tour-title data-i18n="sc.combat.title">An action reaches the rules engine</h2>
+      <p data-tour-description data-i18n="sc.combat.description">The DM combines narration and tool calls. Combat state, turn order, damage, and conditions belong to the backend; the interface presents that state.</p>
+      <p class="showcase-note" data-i18n="sc.tour.note">This tour uses the two screenshots already published with the project. It does not connect to a running campaign.</p>
+      <a class="showcase-button" href="https://github.com/kiselyovd/dungeon-master-ai" data-i18n="sc.code">Open the source</a>
+    </div>
+  </div>
+  <section class="showcase-release">
+    <h2 data-i18n="sc.release">Try the published milestone</h2>
+    <div class="showcase-toolbar">
+      <label class="showcase-field"><span data-i18n="sc.platform">Platform</span><select aria-label="Platform" name="platform" data-i18n-aria="sc.platform"><option value="windows">Windows x64</option><option value="macos">macOS Apple silicon</option><option value="linux">Linux x64</option></select></label>
+      <a class="showcase-button" data-release href="https://github.com/kiselyovd/dungeon-master-ai/releases/tag/v0.12.0-real-engine" data-i18n="sc.assets">Open release assets</a>
+    </div>
+    <p class="showcase-live" role="status" data-release-status>Windows x64: .exe and .msi</p>
+    <p class="showcase-note" data-i18n="sc.release.note">Release v0.12.0-real-engine publishes Windows, macOS Apple silicon, and Linux installers. Filenames retain package version 0.1.0. Signing and notarization are optional workflow steps; local model mode needs compatible sidecars.</p>
+  </section>
+</section>
+
+<script>
+  import { translations, type TranslationKey } from '../../i18n/translations';
+  const root = document.getElementById('dungeon-tour');
+  if (root) {
+    const image = root.querySelector<HTMLImageElement>('[data-tour-image]')!;
+    const caption = root.querySelector<HTMLElement>('[data-tour-caption]')!;
+    const title = root.querySelector<HTMLElement>('[data-tour-title]')!;
+    const description = root.querySelector<HTMLElement>('[data-tour-description]')!;
+    const platform = root.querySelector<HTMLSelectElement>('[name="platform"]')!;
+    const release = root.querySelector<HTMLAnchorElement>('[data-release]')!;
+    const status = root.querySelector<HTMLElement>('[data-release-status]')!;
+    let screen = 'combat';
+    const keys = { combat: ['sc.combat.caption', 'sc.combat.title', 'sc.combat.description'], onboarding: ['sc.character.caption', 'sc.character.title', 'sc.character.description'] } as const;
+    const text = (key: TranslationKey) => translations[document.documentElement.lang === 'ru' ? 'ru' : 'en'][key];
+    const debug = new URLSearchParams(location.search).get('debug') === '1';
+    function showScreen(next: string) {
+      screen = next;
+      const active = screen === 'combat' ? 'combat' : 'onboarding';
+      image.src = `/portfolio/dm-ai-${active}.jpg`;
+      image.alt = active === 'combat' ? 'Published combat screen with Hero, Skeleton A, and Skeleton B' : 'Published character creation screen with class presets';
+      const [captionKey, titleKey, descriptionKey] = keys[active];
+      caption.dataset.i18n = captionKey; title.dataset.i18n = titleKey; description.dataset.i18n = descriptionKey;
+      caption.textContent = text(captionKey); title.textContent = text(titleKey); description.textContent = text(descriptionKey);
+      for (const button of root!.querySelectorAll<HTMLButtonElement>('[data-screen]')) button.setAttribute('aria-pressed', String(button.dataset.screen === active));
+      if (debug) console.debug('[showcase] tour:screen', { screen: active });
+    }
+    function showPlatform() {
+      const labels = { windows: 'Windows x64: .exe and .msi', macos: 'macOS Apple silicon: .dmg', linux: 'Linux x64: .AppImage and .deb' };
+      const label = labels[platform.value as keyof typeof labels];
+      status.textContent = document.documentElement.lang === 'ru' ? label.replace(' and ', ' и ') : label;
+      release.href = 'https://github.com/kiselyovd/dungeon-master-ai/releases/tag/v0.12.0-real-engine';
+      if (debug) console.debug('[showcase] tour:platform', { platform: platform.value });
+    }
+    for (const button of root.querySelectorAll<HTMLButtonElement>('[data-screen]')) button.addEventListener('click', () => showScreen(button.dataset.screen || 'combat'));
+    platform.addEventListener('change', showPlatform);
+    document.addEventListener('langchange', () => { showScreen(screen); showPlatform(); });
+    showScreen(screen); showPlatform();
+  }
+</script>

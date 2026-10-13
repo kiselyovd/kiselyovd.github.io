@@ -44,6 +44,8 @@ jobs:
           bun-version: latest
       - run: bun install --frozen-lockfile
       - run: bun run build
+      - name: Test the emitted production pages and scaffold contract
+        run: bun run test:showcase
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
