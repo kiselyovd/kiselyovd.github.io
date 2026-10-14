@@ -74,3 +74,12 @@ test('invalid source slugs and unsupported presets cannot produce shell commands
   }
   assert.throws(() => buildScaffold(data, { slug: 'valid-project', preset: 'unknown', serving: true, python: '3.13' }));
 });
+
+test('production portfolio links live inference and preserves enterprise before research', () => {
+  const html = built('index.html');
+  assert.ok(html.includes('https://huggingface.co/spaces/kiselyovd/vehicle-keypoints-demo'));
+  assert.ok(html.includes('https://kiselyovd.github.io/vehicle-keypoints/phase0/synthetic-pretraining/'));
+  assert.ok(html.indexOf('id="work"') < html.indexOf('id="flagship"'));
+  assert.ok(html.indexOf('id="flagship"') < html.indexOf('id="portfolio"'));
+  assert.ok(html.indexOf('https://huggingface.co/spaces/kiselyovd/vehicle-keypoints-demo') < html.indexOf('data-i18n="port.col.repo"'));
+});

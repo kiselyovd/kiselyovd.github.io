@@ -136,10 +136,16 @@ export const translations = {
     'port.col.task': 'Task',
     'port.col.model': 'Model',
     'port.col.metrics': 'Metrics',
-    'port.template.prefix': 'All five models are generated from a shared cookiecutter scaffold,',
+    'port.template.prefix': 'The applied projects share an engineering scaffold,',
     'port.template.suffix':
       ', which wires the CI, quality gates, Docker, and docs pipeline before any model code is written.',
     'port.research.label': '/ Research track',
+    'port.research.live': 'Run the 14-point detector on your image',
+    'port.research.real': 'Try the separate main detector trained on real data:',
+    'port.research.viewer': 'Annotation explorer',
+    'port.research.eval': 'CarFusion evaluation',
+    'port.research.transfer': 'Matched real-data transfer evaluation',
+    'port.research.poseeval': '3D evaluation',
     'port.research.heading': 'Synthetic data & monocular 3D pose',
     'port.research.synth':
       ' - an Unreal Engine 5 C++ plugin that captures keypoint-annotated vehicle datasets from Epic City Sample on a 24-point schema (CarFusion-14 compatible), with a cinematic generation demo and a published ',
@@ -147,7 +153,7 @@ export const translations = {
     'port.research.docs.sep': ' · ',
     'port.research.docs': 'Docs',
     'port.research.model':
-      ' - a 24-point YOLO-pose model trained entirely on the synthetic renders (mAP@50 0.859 on synthetic val), proving the generated dataset is clean and learnable.',
+      ' - a synthetic-only 24-point YOLO-pose artifact. The capture workflow and the matched transfer outcome are documented separately; the synthetic supplement did not improve the real-data baseline in those experiments.',
     'port.research.pose3d':
       'Monocular 3D pose baseline in vehicle-keypoints: detector -> PnP (solvePnPRansac) against a canonical rigid car wireframe -> 6DoF pose, evaluated on ApolloCar3D (median rotation error 13.6 deg, 37.8% of cars within 10 deg).',
     'port.research.cap.video':
@@ -308,10 +314,16 @@ export const translations = {
     'port.col.task': 'Задача',
     'port.col.model': 'Модель',
     'port.col.metrics': 'Метрики',
-    'port.template.prefix': 'Все пять моделей сгенерированы из общего cookiecutter-шаблона',
+    'port.template.prefix': 'Прикладные проекты используют общий инженерный шаблон',
     'port.template.suffix':
       ', который поднимает CI, quality gates, Docker и docs-пайплайн ещё до первой строки кода модели.',
     'port.research.label': '/ Research-направление',
+    'port.research.live': 'Запустить детектор 14 точек на своём кадре',
+    'port.research.real': 'Попробуй отдельный основной детектор на реальных данных:',
+    'port.research.viewer': 'Просмотр разметки',
+    'port.research.eval': 'Оценка на CarFusion',
+    'port.research.transfer': 'Контролируемая оценка переноса на реальные данные',
+    'port.research.poseeval': 'Оценка 3D-позы',
     'port.research.heading': 'Синтетические данные и монокулярная 3D-поза',
     'port.research.synth':
       ' - плагин на C++ для Unreal Engine 5: снимает размеченные датасеты ключевых точек авто из Epic City Sample по 24-точечной схеме (совместимой с CarFusion-14), с кинематографичным demo-роликом генерации и опубликованным ',
@@ -319,7 +331,7 @@ export const translations = {
     'port.research.docs.sep': ' · ',
     'port.research.docs': 'Docs',
     'port.research.model':
-      ' - 24-точечная YOLO-pose модель, обученная полностью на синтетических рендерах (mAP@50 0.859 на синтетическом val); доказательство, что сгенерированный датасет чист и обучаем.',
+      ' - synthetic-only YOLO-pose модель с 24 точками. Пайплайн захвата и результат transfer-эксперимента описаны отдельно: синтетическая добавка не улучшила реальный baseline в этих условиях.',
     'port.research.pose3d':
       'Монокулярный 3D-baseline в vehicle-keypoints: детектор -> PnP (solvePnPRansac) по каноничному жёсткому каркасу авто -> 6DoF поза, оценка на ApolloCar3D (медианная ошибка поворота 13.6 deg, 37.8% машин в пределах 10 deg).',
     'port.research.cap.video':
