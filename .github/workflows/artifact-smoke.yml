@@ -17,9 +17,6 @@ jobs:
     env:
       HF_HUB_DISABLE_TELEMETRY: '1'
       HF_HUB_DISABLE_XET: '1'
-      HF_HUB_CACHE: ${{ runner.temp }}/hf-hub
-      MPLCONFIGDIR: ${{ runner.temp }}/matplotlib
-      YOLO_CONFIG_DIR: ${{ runner.temp }}/ultralytics
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
@@ -29,9 +26,13 @@ jobs:
         run: |
           python - <<'PY'
           import shutil
+          import os
           from pathlib import Path
           for path in (Path.cwd(), Path.home(), Path('/tmp')):
               assert shutil.disk_usage(path).free >= 30 * 1024**3, f'Insufficient budget: {path}'
+          with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as output:
+              for key, folder in [('HF_HUB_CACHE', 'hf-hub'), ('MPLCONFIGDIR', 'matplotlib'), ('YOLO_CONFIG_DIR', 'ultralytics')]:
+                  output.write(f'{key}={Path(os.environ["RUNNER_TEMP"]) / folder}\n')
           PY
       - name: Install the frozen verification environment with CPU-only torch
         run: |
