@@ -1,0 +1,126 @@
+{
+  "owner": "kiselyovd",
+  "sources": [
+    {
+      "id": "chest-xray-classifier",
+      "repository": "chest-xray-classifier",
+      "revision": "a31acaad327447d7a2cf69ce9f3025e1f182cacb",
+      "manifest": "artifact-manifest.json",
+      "snapshot": "evidence/artifacts/chest-xray-classifier/manifest.json",
+      "sha256": "258eae48024b1733a051921b069b804eef54ab3a6a39da6c73ca6f593e3be171",
+      "reportSnapshot": "evidence/artifacts/chest-xray-classifier/report.json",
+      "hubCardSnapshot": "evidence/artifacts/chest-xray-classifier/hub-card.md",
+      "hubCardRevision": "524b30a4bc5f5d53f7192404fa88fe079341f989",
+      "hubCardSha256": "c35e65fe29e5a7d3c3164d49b275d280e3b946c31454c0bee9d73f9da11e1443"
+    },
+    {
+      "id": "grnti-text-classifier",
+      "repository": "grnti-text-classifier",
+      "revision": "379602cd90d5c1689a164a8ae06bc264c1c3e218",
+      "manifest": "artifact-manifest.json",
+      "snapshot": "evidence/artifacts/grnti-text-classifier/manifest.json",
+      "sha256": "34a5b6a24c707af4939b8d6a64ca89020001cac1382213af3466385b52f0c3bf",
+      "reportSnapshot": "evidence/artifacts/grnti-text-classifier/report.json",
+      "hubCardSnapshot": "evidence/artifacts/grnti-text-classifier/hub-card.md",
+      "hubCardRevision": "949be2bbf6fda1466fb0487823a0b082feec2c8b",
+      "hubCardSha256": "ae762bb29df29b42b72415332b55975e54bc469779ac41e8e4c59a0457ad647c"
+    },
+    {
+      "id": "vehicle-keypoints",
+      "repository": "vehicle-keypoints",
+      "revision": "d8fb4c264155a72867689c56fdd8958f97c5de04",
+      "manifest": "artifact-manifest.json",
+      "snapshot": "evidence/artifacts/vehicle-keypoints/manifest.json",
+      "sha256": "3d290cdea6cb19559d04fa908bb3a6c79469182924ec2476daccd36488bafb32",
+      "reportSnapshot": "evidence/artifacts/vehicle-keypoints/report.json",
+      "hubCardSnapshot": "evidence/artifacts/vehicle-keypoints/hub-card.md",
+      "hubCardRevision": "5dc28993c780e25b4ddc198f1f75ef5f6e897555",
+      "hubCardSha256": "fec9f1aaf960d941cd035e271cf4306291574e91e9bd4573ff38467fe22985a9"
+    },
+    {
+      "id": "ue5-vehicle-synth",
+      "repository": "ue5-vehicle-synth",
+      "revision": "30473f713315e2e48ab41e6a80ec09abc76d8da2",
+      "manifest": "artifact-manifest.json",
+      "snapshot": "evidence/artifacts/ue5-vehicle-synth/manifest.json",
+      "sha256": "58fdff15bd0c50bfe7517c9c481075ca8959fd337918e34f8b349d02addba9e9",
+      "hubCardSnapshot": "evidence/artifacts/ue5-vehicle-synth/hub-card.md",
+      "hubCardRevision": "efa3f7e96b8af032b5678a65f51c1cf40869aa3c",
+      "hubCardSha256": "3d0f4d8209da1d042986a33595c62e13d26556eebdb0a505f57969b0563b4858"
+    },
+    {
+      "id": "brain-mri-segmentation",
+      "repository": "brain-mri-segmentation",
+      "revision": "34614627bbd2884aedd552becce13adca77013fd",
+      "manifest": "artifact-manifest.json",
+      "snapshot": "evidence/artifacts/brain-mri-segmentation/manifest.json",
+      "sha256": "eee85c3a70f8c2041a28b859fac72f064c513731927d2d50497f9e17f5d016df",
+      "reportSnapshot": "evidence/artifacts/brain-mri-segmentation/report.json",
+      "hubCardSnapshot": "evidence/artifacts/brain-mri-segmentation/hub-card.md",
+      "hubCardRevision": "732b21da22336bb168d98b5ed514c88347499e3c",
+      "hubCardSha256": "a2d620d2adfd8f6d70113d7559adaa6b05dd5c5e12596bc8b98ef725726efdce"
+    },
+    {
+      "id": "cardio-risk-rf",
+      "repository": "cardio-risk-rf",
+      "revision": "ecc8d51bdacd9856e61f88996c4532bf5c06bed9",
+      "manifest": "artifact-manifest.json",
+      "snapshot": "evidence/artifacts/cardio-risk-rf/manifest.json",
+      "sha256": "c7ddbc964defb19d8283c5d0f79c8902b514b21bde1e84641fba7fe378be3fdd",
+      "reportSnapshot": "evidence/artifacts/cardio-risk-rf/report.json",
+      "hubCardSnapshot": "evidence/artifacts/cardio-risk-rf/hub-card.md",
+      "hubCardRevision": "0e66cc681247d41294cb741399a36ecb324476b7",
+      "hubCardSha256": "9a801ff1eeb6d06defb3b26ae1543b3df93f8aacfa18989a0b4a4dff79ebad81"
+    },
+    {
+      "id": "synthetic-vehicle-model",
+      "repository": "vehicle-keypoints",
+      "revision": "d8fb4c264155a72867689c56fdd8958f97c5de04",
+      "manifest": "manifests/synthetic-model.json",
+      "snapshot": "evidence/artifacts/synthetic-vehicle-model/manifest.json",
+      "sha256": "81bbdf29efa065e3ff593d36d3bd8b2a26701e8cc211661643947b43ed5453f0",
+      "reportSnapshot": "evidence/artifacts/synthetic-vehicle-model/report.json",
+      "hubCardSnapshot": "evidence/artifacts/synthetic-vehicle-model/hub-card.md",
+      "hubCardRevision": "40dad97ad5cd32b0fbc5023199dc0ff09a374e96",
+      "hubCardSha256": "0b9c9ca971de43061670673aecd0f3944a5f4b186905bb44b7ffca7b7ee4fe11"
+    }
+  ],
+  "rows": [
+    {
+      "artifact": "chest-xray-classifier",
+      "task": "3-class pneumonia research",
+      "model": "ConvNeXt-V2-Tiny",
+      "metric": "Macro AUROC (OvR)",
+      "metricLabel": "AUROC"
+    },
+    {
+      "artifact": "brain-mri-segmentation",
+      "task": "Tumor segmentation research",
+      "model": "SegFormer-B2",
+      "metric": "Foreground Dice",
+      "metricLabel": "Dice"
+    },
+    {
+      "artifact": "vehicle-keypoints",
+      "task": "14-point vehicle pose",
+      "model": "YOLO26-pose",
+      "metric": "OKS-mAP",
+      "metricLabel": "OKS-mAP",
+      "downloads": true
+    },
+    {
+      "artifact": "cardio-risk-rf",
+      "task": "CVD presence at examination",
+      "model": "LightGBM",
+      "metric": "LightGBM ROC-AUC",
+      "metricLabel": "ROC-AUC"
+    },
+    {
+      "artifact": "grnti-text-classifier",
+      "task": "28 GRNTI subjects",
+      "model": "XLM-RoBERTa",
+      "metric": "Top-1 accuracy",
+      "metricLabel": "Top-1"
+    }
+  ]
+}

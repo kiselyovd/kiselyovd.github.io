@@ -5,10 +5,16 @@ interface Props {
   model: string;
   metrics: string;
   hfSlug: string;
+  status: string;
+  scope: string;
+  reportUrl: string;
+  manifestUrl: string;
+  demoUrl?: string | null;
   variant: 'desktop' | 'mobile';
   downloads?: boolean;
 }
-const { repo, task, model, metrics, hfSlug, variant, downloads = false } = Astro.props;
+const { repo, task, model, metrics, hfSlug, variant, status, scope, reportUrl, manifestUrl, demoUrl, downloads = false } = Astro.props;
+const evidenceLabel = status === 'reported' ? 'Recorded report' : 'Replay; training split unverified';
 const githubUrl = `https://github.com/kiselyovd/${repo}`;
 const hfUrl = `https://huggingface.co/kiselyovd/${hfSlug}`;
 const docsUrl = `https://kiselyovd.github.io/${repo}/`;
@@ -18,7 +24,7 @@ const dlBadge = `https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhug
 
 {
   variant === 'desktop' ? (
-    <tr class="border-b border-[color:var(--border)]">
+    <tr data-artifact-repo={repo} data-evaluation-status={status} class="border-b border-[color:var(--border)]">
       <td class="py-3 pr-4">
         <a
           href={githubUrl}
@@ -32,7 +38,7 @@ const dlBadge = `https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhug
       <td class="py-3 pr-4 text-[12px] text-[color:var(--text-muted)]">{task}</td>
       <td class="py-3 pr-4 text-[12px] text-[color:var(--text-muted)]">{model}</td>
       <td class="py-3 font-mono text-[11px] text-[color:var(--text)]">
-        {metrics}
+        <a href={reportUrl} title={scope} aria-label={`${metrics}. Evaluation report for ${repo}`} class="hover:underline">{metrics}</a>
         <a
           href={hfUrl}
           target="_blank"
@@ -52,10 +58,12 @@ const dlBadge = `https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhug
         {downloads && (
           <img src={dlBadge} alt="HuggingFace downloads per month" class="ml-2 inline-block align-middle h-[18px]" loading="lazy" />
         )}
+        {demoUrl && <a href={demoUrl} class="ml-2 text-[color:var(--accent)] hover:underline" data-i18n="port.live">Try</a>}
+        <a href={manifestUrl} title={scope} class="block mt-1 text-[9px] text-[color:var(--text-muted)] hover:underline" data-i18n={`port.evidence.${status}`}>{evidenceLabel}</a>
       </td>
     </tr>
   ) : (
-    <article class="bg-[color:var(--surface)] border border-[color:var(--border)] rounded-md p-3">
+    <article data-artifact-repo={repo} data-evaluation-status={status} class="bg-[color:var(--surface)] border border-[color:var(--border)] rounded-md p-3">
       <a
         href={githubUrl}
         target="_blank"
@@ -65,8 +73,8 @@ const dlBadge = `https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhug
         {repo}
       </a>
       <div class="text-[10px] text-[color:var(--text-muted)] mt-1">{task} · {model}</div>
-      <div class="font-mono text-[10px] text-[color:var(--text)] mt-1 flex items-center gap-2">
-        {metrics}
+      <div class="font-mono text-[10px] text-[color:var(--text)] mt-1 flex flex-wrap items-center gap-2">
+        <a href={reportUrl} title={scope} aria-label={`${metrics}. Evaluation report for ${repo}`} class="hover:underline">{metrics}</a>
         <a
           href={hfUrl}
           target="_blank"
@@ -86,7 +94,9 @@ const dlBadge = `https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhug
         {downloads && (
           <img src={dlBadge} alt="HuggingFace downloads per month" class="inline-block align-middle h-[16px]" loading="lazy" />
         )}
+        {demoUrl && <a href={demoUrl} class="text-[color:var(--accent)] hover:underline" data-i18n="port.live">Try</a>}
       </div>
+      <a href={manifestUrl} title={scope} class="block mt-1 text-[9px] text-[color:var(--text-muted)] hover:underline" data-i18n={`port.evidence.${status}`}>{evidenceLabel}</a>
     </article>
   )
 }

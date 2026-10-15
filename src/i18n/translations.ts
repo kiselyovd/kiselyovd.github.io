@@ -1,5 +1,13 @@
 export const translations = {
   en: {
+    'port.models': 'Models & evaluation',
+    'port.evidence.intro':
+      'Scores link to pinned evaluation records; replayed and historical results are labelled separately.',
+    'port.evidence.reported': 'Recorded report',
+    'port.evidence.replayed_reconstructed': 'Replay; training split unverified',
+    'port.live': 'Try',
+    'port.research.lineage': 'Inspect the exact dataset/checkpoint split crosswalk',
+
     'sc.back': 'Portfolio',
     'sc.source': 'Source',
     'sc.task': 'Task preset',
@@ -62,21 +70,21 @@ export const translations = {
     'hero.headline.accent': 'ship',
     'hero.headline.suffix': 'to production.',
     'hero.role': 'on-prem · air-gapped · multimodal',
-    'hero.fact1.value': '5.5y',
-    'hero.fact1.label': 'in ML & dev',
+    'hero.fact1.value': 'LLM / CV',
+    'hero.fact1.label': 'end-to-end delivery',
     'hero.fact2.value': '4',
     'hero.fact2.label': 'enterprise AI systems',
     'hero.fact3.value': '10+',
     'hero.fact3.label': 'presales led',
-    'hero.fact4.value': '6',
-    'hero.fact4.label': 'open-source ML repos',
+    'hero.fact4.value': 'Open source',
+    'hero.fact4.label': 'models, data & demos',
     'hero.cta.primary': 'View work',
     'hero.cta.secondary': 'GitHub',
 
     'about.label': '/ About',
     'about.heading': 'Lead ML Engineer with product and presale background',
     'about.p1':
-      'I build LLM systems, RAG, and multimodal pipelines for enterprise clients in on-premise and air-gapped environments. 5.5 years in ML and engineering; the last three years have been end-to-end LLM, OCR/VLM, and RAG platforms in production.',
+      'I build LLM systems, RAG, and multimodal pipelines for enterprise clients in on-premise and air-gapped environments. I take LLM, OCR/VLM, and RAG platforms from architecture through delivery and support.',
     'about.p2':
       'I combine product development, ML team lead work, mentoring external teams, and presale architecture. A fullstack (Django/React) background means I ship models as production services, not proof-of-concepts.',
     'about.meta.focus.label': 'Focus',
@@ -106,7 +114,7 @@ export const translations = {
     'ent.card3.role': 'Tech Lead · team 1+1',
     'ent.card3.title': 'LLM commercial-proposal automation',
     'ent.card3.desc':
-      'VLM field extraction on Qwen 3.6 35B with xgrammar constrained decoding - hallucination-free at inference. Rules graph on networkx, human-in-the-loop constraint extractor from regulatory docs.',
+      'VLM field extraction on Qwen 3.6 35B with xgrammar schema-constrained decoding. Rules graph on networkx, human-in-the-loop constraint extractor from regulatory docs.',
     'ent.card4.category': 'EdTech · VR',
     'ent.card4.role': 'ML advisor / mentor',
     'ent.card4.title': 'VR language-learning with AI agent',
@@ -131,7 +139,7 @@ export const translations = {
     'port.label': '/ Open-source ML portfolio',
     'port.heading': 'Applied ML projects and the engineering scaffold behind them',
     'port.intro':
-      'PyTorch Lightning · Hydra · MLflow · DVC · FastAPI · Docker · GitHub Actions · MkDocs · HuggingFace Hub. Every repo: CI, HF model card with widget, DVC-tracked artefacts, bilingual README, full quality gates.',
+      'Classification, segmentation and vehicle-pose research with pinned artifacts, numerical evaluation records and working demos. Evidence status is shown per project.',
     'port.col.repo': 'Repo',
     'port.col.task': 'Task',
     'port.col.model': 'Model',
@@ -155,7 +163,7 @@ export const translations = {
     'port.research.model':
       ' - a synthetic-only 24-point YOLO-pose artifact. The capture workflow and the matched transfer outcome are documented separately; the synthetic supplement did not improve the real-data baseline in those experiments.',
     'port.research.pose3d':
-      'Monocular 3D pose baseline in vehicle-keypoints: detector -> PnP (solvePnPRansac) against a canonical rigid car wireframe -> 6DoF pose, evaluated on ApolloCar3D (median rotation error 13.6 deg, 37.8% of cars within 10 deg).',
+      'Monocular PnP companion evaluated separately on ApolloCar3D, with detector-coverage and domain-shift limits.',
     'port.research.cap.video':
       'Rendered in Epic UE5 City Sample - clean -> 24-pt skeleton -> wireframe',
     'port.research.cap.labels': 'Synthetic labels',
@@ -179,6 +187,14 @@ export const translations = {
   },
 
   ru: {
+    'port.models': 'Модели и оценка',
+    'port.evidence.intro':
+      'Метрики ведут к зафиксированным отчётам; повторные прогоны и исторические результаты отмечены отдельно.',
+    'port.evidence.reported': 'Сохранённый отчёт',
+    'port.evidence.replayed_reconstructed': 'Повторный прогон; состав обучения не подтверждён',
+    'port.live': 'Запустить',
+    'port.research.lineage': 'Точное соответствие split’ов датасета и checkpoint',
+
     'sc.back': 'Портфолио',
     'sc.source': 'Источник',
     'sc.task': 'Тип задачи',
@@ -240,21 +256,21 @@ export const translations = {
     'hero.headline.accent': 'доходят до прода',
     'hero.headline.suffix': '.',
     'hero.role': 'on-prem · air-gapped · мультимодальность',
-    'hero.fact1.value': '5.5 лет',
-    'hero.fact1.label': 'в ML и разработке',
+    'hero.fact1.value': 'LLM / CV',
+    'hero.fact1.label': 'от архитектуры до поддержки',
     'hero.fact2.value': '4',
     'hero.fact2.label': 'enterprise AI-системы',
     'hero.fact3.value': '10+',
     'hero.fact3.label': 'пресейлов',
-    'hero.fact4.value': '6',
-    'hero.fact4.label': 'open-source ML-репо',
+    'hero.fact4.value': 'Open source',
+    'hero.fact4.label': 'модели, данные и демо',
     'hero.cta.primary': 'Смотреть работы',
     'hero.cta.secondary': 'GitHub',
 
     'about.label': '/ Обо мне',
     'about.heading': 'Lead ML-инженер с продуктовым и пресейл-бэкграундом',
     'about.p1':
-      'Строю LLM-системы, RAG и мультимодальные пайплайны для корпоративных заказчиков в on-premise и air-gapped контурах. 5.5 лет в ML и разработке; последние три года - LLM, OCR/VLM и RAG-платформы в проде от архитектуры до поддержки.',
+      'Строю LLM-системы, RAG и мультимодальные пайплайны для корпоративных заказчиков в on-premise и air-gapped контурах. Довожу LLM, OCR/VLM и RAG-платформы от архитектуры до внедрения и поддержки.',
     'about.p2':
       'Совмещаю продуктовую разработку, техлид ML-команды, менторинг внешних команд и пресейл-архитектуру. Fullstack-бэкграунд (Django/React) помогает доводить модели до полноценных сервисов, а не PoC.',
     'about.meta.focus.label': 'Фокус',
@@ -284,7 +300,7 @@ export const translations = {
     'ent.card3.role': 'Tech Lead · команда 1+1',
     'ent.card3.title': 'LLM-автоматизация коммерческих предложений',
     'ent.card3.desc':
-      'VLM-экстракция полей на Qwen 3.6 35B с constrained decoding через xgrammar - без галлюцинаций на инференсе. Граф правил на networkx, human-in-the-loop экстрактор constraints из нормативки.',
+      'VLM-экстракция полей на Qwen 3.6 35B со структурированным выводом по схеме через xgrammar. Граф правил на networkx, human-in-the-loop экстрактор constraints из нормативки.',
     'ent.card4.category': 'EdTech · VR',
     'ent.card4.role': 'ML-эксперт / ментор',
     'ent.card4.title': 'VR-платформа для изучения языков с AI-агентом',
@@ -309,7 +325,7 @@ export const translations = {
     'port.label': '/ Open-source ML-портфолио',
     'port.heading': 'Прикладные ML-проекты и общий инженерный каркас',
     'port.intro':
-      'PyTorch Lightning · Hydra · MLflow · DVC · FastAPI · Docker · GitHub Actions · MkDocs · HuggingFace Hub. Каждый репо: CI, HF-карточка с виджетом, DVC-артефакты, bilingual README, полный стек quality gates.',
+      'Классификация, сегментация и ключевые точки автомобилей: зафиксированные артефакты, численные отчёты и рабочие демо. Статус доказательств указан для каждого проекта.',
     'port.col.repo': 'Репо',
     'port.col.task': 'Задача',
     'port.col.model': 'Модель',
@@ -333,7 +349,7 @@ export const translations = {
     'port.research.model':
       ' - synthetic-only YOLO-pose модель с 24 точками. Пайплайн захвата и результат transfer-эксперимента описаны отдельно: синтетическая добавка не улучшила реальный baseline в этих условиях.',
     'port.research.pose3d':
-      'Монокулярный 3D-baseline в vehicle-keypoints: детектор -> PnP (solvePnPRansac) по каноничному жёсткому каркасу авто -> 6DoF поза, оценка на ApolloCar3D (медианная ошибка поворота 13.6 deg, 37.8% машин в пределах 10 deg).',
+      'Монокулярный PnP-baseline отдельно оценён на ApolloCar3D; ограничения покрытия детектора и переноса домена описаны в протоколе.',
     'port.research.cap.video':
       'Рендер в Epic UE5 City Sample - чисто -> 24-точечный скелет -> каркас',
     'port.research.cap.labels': 'Синтетические метки',

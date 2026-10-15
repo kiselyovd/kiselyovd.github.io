@@ -31,6 +31,13 @@
     }
   },
   "files": {
-    "includes": ["src/**/*.{js,ts,mjs}", "*.mjs", "*.json", "!*.astro"]
+    "includes": [
+      "src/**/*.{js,ts,mjs}",
+      "*.mjs",
+      "*.json",
+      "!*.astro",
+      "scripts/*.mjs",
+      "tests/artifacts.test.mjs"
+    ]
   }
 }

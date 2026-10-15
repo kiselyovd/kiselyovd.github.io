@@ -1,44 +1,9 @@
 ---
 import PortfolioRow from './PortfolioRow.astro';
 
-const rows = [
-  {
-    repo: 'chest-xray-classifier',
-    task: '3-class pneumonia',
-    model: 'ConvNeXt-V2-Tiny',
-    metrics: 'AUROC 97.5%',
-    hfSlug: 'chest-xray-classifier',
-  },
-  {
-    repo: 'brain-mri-segmentation',
-    task: 'Tumor segmentation',
-    model: 'SegFormer-B2',
-    metrics: 'Metric audit pending',
-    hfSlug: 'brain-mri-segmentation',
-  },
-  {
-    repo: 'vehicle-keypoints',
-    task: '14-kp car pose',
-    model: 'YOLO26-pose',
-    metrics: 'OKS-mAP 50.4%',
-    hfSlug: 'vehicle-keypoints',
-    downloads: true,
-  },
-  {
-    repo: 'cardio-risk-rf',
-    task: 'Disease classification',
-    model: 'LightGBM',
-    metrics: 'ROC-AUC 79.8%',
-    hfSlug: 'cardio-risk-rf',
-  },
-  {
-    repo: 'grnti-text-classifier',
-    task: 'GRNTI 28-class',
-    model: 'XLM-RoBERTa',
-    metrics: 'Top-1 72.4%',
-    hfSlug: 'grnti-text-classifier',
-  },
-];
+import artifacts from '../data/ml-artifacts.json';
+
+const rows = artifacts.rows;
 ---
 
 <section id="portfolio" class="fade-in px-6 md:px-10 py-16 md:py-20 border-b border-[color:var(--border)]">
@@ -139,9 +104,13 @@ const rows = [
       <li><span data-i18n="port.research.pose3d">Monocular PnP companion with a separate ApolloCar3D evaluation.</span> <a href="https://kiselyovd.github.io/vehicle-keypoints/usage-guide/#monocular-3d-pose-pnp-baseline" class="text-[color:var(--accent)] hover:underline" data-i18n="port.research.poseeval">3D evaluation</a></li>
       <li><a href="https://kiselyovd.github.io/vehicle-keypoints/phase0/synthetic-pretraining/" class="text-[color:var(--accent)] hover:underline" data-i18n="port.research.transfer">Matched real-data transfer evaluation</a></li>
     </ul>
+    <p class="mt-4 text-[12px] text-[color:var(--text-muted)]"><a href="https://kiselyovd.github.io/ue5-vehicle-synth/DATASET_LINEAGE/" class="text-[color:var(--accent)] hover:underline" data-i18n="port.research.lineage">Inspect the exact dataset/checkpoint split crosswalk</a></p>
     <p class="mt-5 text-[13px] text-[color:var(--text-muted)]" data-i18n="port.research.real">Try the separate main detector trained on real data:</p>
     <p class="mt-2 text-[13px]"><a href="https://huggingface.co/spaces/kiselyovd/vehicle-keypoints-demo" class="text-[color:var(--accent)] hover:underline" data-i18n="port.research.live">Run the 14-point detector on your image</a> · <a href="https://kiselyovd.github.io/vehicle-keypoints/showcase/" class="text-[color:var(--accent)] hover:underline" data-i18n="port.research.viewer">Annotation explorer</a> · <a href="https://kiselyovd.github.io/vehicle-keypoints/usage-guide/#results" class="text-[color:var(--accent)] hover:underline" data-i18n="port.research.eval">CarFusion evaluation</a></p>
   </div>
+
+  <h3 id="model-evaluations" class="text-[16px] md:text-[20px] font-bold tracking-[-0.01em] text-[color:var(--text)] mb-3" data-i18n="port.models">Models &amp; evaluation</h3>
+  <p class="text-[12px] text-[color:var(--text-muted)] mb-4" data-i18n="port.evidence.intro">Scores link to pinned evaluation records; replayed and historical results are labelled separately.</p>
 
   <table class="hidden md:table w-full border-collapse">
     <thead>

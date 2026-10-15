@@ -1,0 +1,195 @@
+{
+  "owner": "kiselyovd",
+  "contracts": [
+    {
+      "id": "chest-xray-classifier",
+      "repo": "chest-xray-classifier",
+      "revision": "a31acaad327447d7a2cf69ce9f3025e1f182cacb",
+      "hubRepo": "kiselyovd/chest-xray-classifier",
+      "hubRevision": "09bd78b58c657870961faa1b79699da5ca8bc796",
+      "status": "replayed_reconstructed",
+      "scope": "The complete confusion matrix and metrics reproduce the stored main report. Historical checkpoint training membership is unrecorded; the baseline remains a stored report.",
+      "trainingMembershipVerified": false,
+      "metrics": {
+        "Accuracy": 0.9134615384615384,
+        "Macro F1": 0.9029730638714358,
+        "Macro AUROC (OvR)": 0.9752638346619307
+      },
+      "reportUrl": "https://github.com/kiselyovd/chest-xray-classifier/blob/a31acaad327447d7a2cf69ce9f3025e1f182cacb/reports/replay-native-2026-10-15.json",
+      "manifestUrl": "https://github.com/kiselyovd/chest-xray-classifier/blob/a31acaad327447d7a2cf69ce9f3025e1f182cacb/artifact-manifest.json",
+      "demoUrl": null
+    },
+    {
+      "id": "grnti-text-classifier",
+      "repo": "grnti-text-classifier",
+      "revision": "379602cd90d5c1689a164a8ae06bc264c1c3e218",
+      "hubRepo": "kiselyovd/grnti-text-classifier",
+      "hubRevision": "24fbe75c27112612a464935c95465def6af788ef",
+      "status": "replayed_reconstructed",
+      "scope": "Current pinned source test split. Original training dataset revision and membership were not recorded; held-out independence is not re-established by this replay.",
+      "trainingMembershipVerified": false,
+      "metrics": {
+        "Top-1 accuracy": 0.7236652236652237,
+        "Top-5 accuracy": 0.9675324675324676,
+        "Macro F1": 0.7230108137637654
+      },
+      "reportUrl": "https://github.com/kiselyovd/grnti-text-classifier/blob/379602cd90d5c1689a164a8ae06bc264c1c3e218/reports/replay-native.json",
+      "manifestUrl": "https://github.com/kiselyovd/grnti-text-classifier/blob/379602cd90d5c1689a164a8ae06bc264c1c3e218/artifact-manifest.json",
+      "demoUrl": "https://huggingface.co/spaces/kiselyovd/grnti-text-classifier-demo"
+    },
+    {
+      "id": "vehicle-keypoints",
+      "repo": "vehicle-keypoints",
+      "revision": "d8fb4c264155a72867689c56fdd8958f97c5de04",
+      "hubRepo": "kiselyovd/vehicle-keypoints",
+      "hubRevision": "d277c2d8c9b5ee49d9fed85fe43bdd72b16a0f06",
+      "status": "reported",
+      "scope": "12761 source test frames, OKS sigmas 0.05, PCK threshold 0.05 of bbox diagonal. Historical report is tracked; original training membership and immutable dataset revision were not recorded. Curated demo outputs are separate illustrations.",
+      "trainingMembershipVerified": false,
+      "metrics": {
+        "OKS-mAP": 0.5038477111813657,
+        "OKS-mAP50": 0.7036296602254928,
+        "PCK@0.05": 0.7606000740832202
+      },
+      "reportUrl": "https://github.com/kiselyovd/vehicle-keypoints/blob/d8fb4c264155a72867689c56fdd8958f97c5de04/reports/metrics.json",
+      "manifestUrl": "https://github.com/kiselyovd/vehicle-keypoints/blob/d8fb4c264155a72867689c56fdd8958f97c5de04/artifact-manifest.json",
+      "demoUrl": "https://huggingface.co/spaces/kiselyovd/vehicle-keypoints-demo"
+    },
+    {
+      "id": "ue5-vehicle-synth",
+      "repo": "ue5-vehicle-synth",
+      "revision": "30473f713315e2e48ab41e6a80ec09abc76d8da2",
+      "hubRepo": "kiselyovd/citysample-vehicle-keypoints-24pt",
+      "hubRevision": "bf2e175ddfb0b2dcd8dee3264f38eec3c19e643b",
+      "status": "unavailable",
+      "scope": "234 of 257 published test frames are in the released checkpoint training membership. The original model validation fold is 251 frames. Preserve both split definitions and use the exact crosswalk; never treat current Hub test as independent evaluation for this model.",
+      "trainingMembershipVerified": true,
+      "metrics": {},
+      "reportUrl": null,
+      "manifestUrl": "https://github.com/kiselyovd/ue5-vehicle-synth/blob/30473f713315e2e48ab41e6a80ec09abc76d8da2/artifact-manifest.json",
+      "demoUrl": null
+    },
+    {
+      "id": "brain-mri-segmentation",
+      "repo": "brain-mri-segmentation",
+      "revision": "34614627bbd2884aedd552becce13adca77013fd",
+      "hubRepo": "kiselyovd/brain-mri-segmentation",
+      "hubRevision": "48c79adfde8b063e74737357ab20a6f7f67a0b1b",
+      "status": "replayed_reconstructed",
+      "scope": "Foreground scores pool confusion counts across all test pixels. Historical checkpoint training membership is unverified; this is not an independently established held-out benchmark or a replay of the missing U-Net baseline. Patient-macro Dice: see the full report.",
+      "trainingMembershipVerified": false,
+      "metrics": {
+        "Foreground Dice": 0.8808333318562974,
+        "Foreground IoU": 0.787043929138173
+      },
+      "reportUrl": "https://github.com/kiselyovd/brain-mri-segmentation/blob/34614627bbd2884aedd552becce13adca77013fd/reports/replay-segformer-2026-10-15.json",
+      "manifestUrl": "https://github.com/kiselyovd/brain-mri-segmentation/blob/34614627bbd2884aedd552becce13adca77013fd/artifact-manifest.json",
+      "demoUrl": null
+    },
+    {
+      "id": "cardio-risk-rf",
+      "repo": "cardio-risk-rf",
+      "revision": "ecc8d51bdacd9856e61f88996c4532bf5c06bed9",
+      "hubRepo": "kiselyovd/cardio-risk-rf",
+      "hubRevision": "a0117e88461cf4197a2a604203f68dde23fd069a",
+      "status": "replayed_reconstructed",
+      "scope": "Target is CVD presence at examination. The exact legacy split is 48999/10500/10501; original training row membership is unrecorded. Average precision uses sklearn AP.",
+      "trainingMembershipVerified": false,
+      "metrics": {
+        "LightGBM ROC-AUC": 0.7977146329524751,
+        "LightGBM average precision": 0.7811081311397825,
+        "RF ROC-AUC": 0.7948647255716084,
+        "RF average precision": 0.7794140387677455
+      },
+      "reportUrl": "https://github.com/kiselyovd/cardio-risk-rf/blob/ecc8d51bdacd9856e61f88996c4532bf5c06bed9/reports/replay-native.json",
+      "manifestUrl": "https://github.com/kiselyovd/cardio-risk-rf/blob/ecc8d51bdacd9856e61f88996c4532bf5c06bed9/artifact-manifest.json",
+      "demoUrl": null
+    },
+    {
+      "id": "synthetic-vehicle-model",
+      "repo": "vehicle-keypoints",
+      "revision": "d8fb4c264155a72867689c56fdd8958f97c5de04",
+      "hubRepo": "kiselyovd/citysample-vehicle-keypoints-24pt",
+      "hubRevision": "bb0971f76e0944a3dd90faa236cbff37547b5590",
+      "status": "reported",
+      "scope": "Imported historical training-run validation values, not a new replay. Current Hub test includes 234 checkpoint training frames and is not independent.",
+      "trainingMembershipVerified": true,
+      "metrics": {
+        "Box mAP50": 0.84,
+        "Pose mAP50": 0.602,
+        "Box mAP50-95": 0.629,
+        "Pose mAP50-95": 0.39
+      },
+      "reportUrl": "https://github.com/kiselyovd/vehicle-keypoints/blob/d8fb4c264155a72867689c56fdd8958f97c5de04/reports/synthetic-model-reported.json",
+      "manifestUrl": "https://github.com/kiselyovd/vehicle-keypoints/blob/d8fb4c264155a72867689c56fdd8958f97c5de04/manifests/synthetic-model.json",
+      "demoUrl": null
+    }
+  ],
+  "rows": [
+    {
+      "repo": "chest-xray-classifier",
+      "task": "3-class pneumonia research",
+      "model": "ConvNeXt-V2-Tiny",
+      "metrics": "AUROC 97.53%",
+      "hfSlug": "chest-xray-classifier",
+      "status": "replayed_reconstructed",
+      "scope": "The complete confusion matrix and metrics reproduce the stored main report. Historical checkpoint training membership is unrecorded; the baseline remains a stored report.",
+      "reportUrl": "https://github.com/kiselyovd/chest-xray-classifier/blob/a31acaad327447d7a2cf69ce9f3025e1f182cacb/reports/replay-native-2026-10-15.json",
+      "manifestUrl": "https://github.com/kiselyovd/chest-xray-classifier/blob/a31acaad327447d7a2cf69ce9f3025e1f182cacb/artifact-manifest.json",
+      "demoUrl": null,
+      "downloads": false
+    },
+    {
+      "repo": "brain-mri-segmentation",
+      "task": "Tumor segmentation research",
+      "model": "SegFormer-B2",
+      "metrics": "Dice 88.08%",
+      "hfSlug": "brain-mri-segmentation",
+      "status": "replayed_reconstructed",
+      "scope": "Foreground scores pool confusion counts across all test pixels. Historical checkpoint training membership is unverified; this is not an independently established held-out benchmark or a replay of the missing U-Net baseline. Patient-macro Dice: see the full report.",
+      "reportUrl": "https://github.com/kiselyovd/brain-mri-segmentation/blob/34614627bbd2884aedd552becce13adca77013fd/reports/replay-segformer-2026-10-15.json",
+      "manifestUrl": "https://github.com/kiselyovd/brain-mri-segmentation/blob/34614627bbd2884aedd552becce13adca77013fd/artifact-manifest.json",
+      "demoUrl": null,
+      "downloads": false
+    },
+    {
+      "repo": "vehicle-keypoints",
+      "task": "14-point vehicle pose",
+      "model": "YOLO26-pose",
+      "metrics": "OKS-mAP 50.38%",
+      "hfSlug": "vehicle-keypoints",
+      "status": "reported",
+      "scope": "12761 source test frames, OKS sigmas 0.05, PCK threshold 0.05 of bbox diagonal. Historical report is tracked; original training membership and immutable dataset revision were not recorded. Curated demo outputs are separate illustrations.",
+      "reportUrl": "https://github.com/kiselyovd/vehicle-keypoints/blob/d8fb4c264155a72867689c56fdd8958f97c5de04/reports/metrics.json",
+      "manifestUrl": "https://github.com/kiselyovd/vehicle-keypoints/blob/d8fb4c264155a72867689c56fdd8958f97c5de04/artifact-manifest.json",
+      "demoUrl": "https://huggingface.co/spaces/kiselyovd/vehicle-keypoints-demo",
+      "downloads": true
+    },
+    {
+      "repo": "cardio-risk-rf",
+      "task": "CVD presence at examination",
+      "model": "LightGBM",
+      "metrics": "ROC-AUC 79.77%",
+      "hfSlug": "cardio-risk-rf",
+      "status": "replayed_reconstructed",
+      "scope": "Target is CVD presence at examination. The exact legacy split is 48999/10500/10501; original training row membership is unrecorded. Average precision uses sklearn AP.",
+      "reportUrl": "https://github.com/kiselyovd/cardio-risk-rf/blob/ecc8d51bdacd9856e61f88996c4532bf5c06bed9/reports/replay-native.json",
+      "manifestUrl": "https://github.com/kiselyovd/cardio-risk-rf/blob/ecc8d51bdacd9856e61f88996c4532bf5c06bed9/artifact-manifest.json",
+      "demoUrl": null,
+      "downloads": false
+    },
+    {
+      "repo": "grnti-text-classifier",
+      "task": "28 GRNTI subjects",
+      "model": "XLM-RoBERTa",
+      "metrics": "Top-1 72.37%",
+      "hfSlug": "grnti-text-classifier",
+      "status": "replayed_reconstructed",
+      "scope": "Current pinned source test split. Original training dataset revision and membership were not recorded; held-out independence is not re-established by this replay.",
+      "reportUrl": "https://github.com/kiselyovd/grnti-text-classifier/blob/379602cd90d5c1689a164a8ae06bc264c1c3e218/reports/replay-native.json",
+      "manifestUrl": "https://github.com/kiselyovd/grnti-text-classifier/blob/379602cd90d5c1689a164a8ae06bc264c1c3e218/artifact-manifest.json",
+      "demoUrl": "https://huggingface.co/spaces/kiselyovd/grnti-text-classifier-demo",
+      "downloads": false
+    }
+  ]
+}

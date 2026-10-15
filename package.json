@@ -8,10 +8,14 @@
     "preview": "astro preview",
     "check": "astro check",
     "test:showcase": "node --experimental-strip-types --test tests/showcase.test.mjs",
-    "lint": "biome check src/ *.mjs *.json",
-    "lint:fix": "biome check --write src/ *.mjs *.json",
-    "format": "biome format --write src/ *.mjs *.json",
-    "prepare": "lefthook install"
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "prepare": "lefthook install",
+    "artifacts:generate": "node scripts/portfolio-artifacts.mjs --write",
+    "artifacts:check": "node scripts/portfolio-artifacts.mjs",
+    "artifacts:remote": "node scripts/portfolio-artifacts.mjs --remote",
+    "test:artifacts": "node --test tests/artifacts.test.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
