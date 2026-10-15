@@ -15,7 +15,9 @@
     "artifacts:generate": "node scripts/portfolio-artifacts.mjs --write",
     "artifacts:check": "node scripts/portfolio-artifacts.mjs",
     "artifacts:remote": "node scripts/portfolio-artifacts.mjs --remote",
-    "test:artifacts": "node --test tests/artifacts.test.mjs"
+    "test:artifacts": "node --test tests/artifacts.test.mjs",
+    "previews:generate": "python automation/render_social_previews.py",
+    "previews:check": "python automation/render_social_previews.py --check"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",

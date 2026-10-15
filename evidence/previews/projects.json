@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "owner": "kiselyovd",
+  "projects": [
+    {
+      "id": "vehicle-keypoints",
+      "title": "Vehicle\nKeypoints",
+      "category": "Computer vision",
+      "tagline": "Vehicle pose and controlled\nsim-to-real experiments",
+      "links": "Code / Model / Demo",
+      "caption": "CarFusion scene with recorded model output",
+      "visual": "evidence/previews/inputs/vehicle-keypoints.png",
+      "crop": [
+        45,
+        163,
+        628,
+        490
+      ],
+      "source": {
+        "repository": "kiselyovd/vehicle-keypoints",
+        "revision": "2b8dfdc8640376acc3fdf68144288ac351270059",
+        "path": "docs/images/social-preview.png",
+        "sha256": "8a3e64f1946edd513df6c6193fd34f94cd14e1ad8f982f00b89e26764d3eaadc"
+      }
+    },
+    {
+      "id": "brain-mri-segmentation",
+      "title": "Brain MRI\nSegmentation",
+      "category": "Medical imaging research",
+      "tagline": "Foreground masks with\nan explicit evaluation contract",
+      "links": "Code / Model / Evaluation",
+      "caption": "Sample mask overlay; research use only",
+      "visual": "evidence/previews/inputs/brain-mri-segmentation.png",
+      "crop": [
+        125,
+        115,
+        548,
+        538
+      ],
+      "source": {
+        "repository": "kiselyovd/brain-mri-segmentation",
+        "revision": "d19b6644d0c05ef1f0cda9a2c78318ce9359497f",
+        "path": "docs/images/social-preview.png",
+        "sha256": "ddd8532fb53d9afade43c1df0e918d5b24f3191b11b40d716af7319924c332d4"
+      }
+    },
+    {
+      "id": "chest-xray-classifier",
+      "title": "Chest X-ray\nClassification",
+      "category": "Medical imaging research",
+      "tagline": "Inspect predictions, errors\nand the evaluation protocol",
+      "links": "Code / Model / Evaluation",
+      "caption": "Recorded examples, including classification errors",
+      "visual": "evidence/previews/inputs/chest-xray-classifier.png",
+      "crop": null,
+      "source": {
+        "repository": "kiselyovd/chest-xray-classifier",
+        "revision": "e15025624f3f03daa532d4c7068745cfc7ec63a1",
+        "path": "docs/images/sample_predictions.png",
+        "sha256": "bc5602b9df0774ae7ecbc32a5f1cf1137dcf7610b44c31b5ab5d0cf133e1594c"
+      }
+    },
+    {
+      "id": "cardio-risk-rf",
+      "title": "Cardiovascular\nDisease",
+      "category": "Tabular machine learning",
+      "tagline": "Classification at examination\nand source-feature attribution",
+      "links": "Code / Model / Evaluation",
+      "caption": "Feature attribution; no prospective risk estimate",
+      "visual": "evidence/previews/inputs/cardio-risk-rf.png",
+      "crop": null,
+      "source": {
+        "repository": "kiselyovd/cardio-risk-rf",
+        "revision": "8bd54e3a3706ec4bbfdf24d9ff89db646b196517",
+        "path": "docs/images/shap_summary.png",
+        "sha256": "812fe2654db8037decd440eed06b2cc1505fee6f722458d45c5066ad096992b0"
+      }
+    },
+    {
+      "id": "grnti-text-classifier",
+      "title": "Scientific-text\nClassification",
+      "category": "Russian-language NLP",
+      "tagline": "An abstract becomes\nranked GRNTI subject codes",
+      "links": "Code / Model / Demo",
+      "caption": "Native prediction on an authored example",
+      "visual": "evidence/previews/inputs/grnti-text-classifier.png",
+      "crop": [
+        670,
+        115,
+        1240,
+        532
+      ],
+      "source": {
+        "repository": "kiselyovd/grnti-text-classifier",
+        "revision": "278c077b370d4bcbc9413a69a55fc5a7979391ed",
+        "path": "docs/images/social-preview.png",
+        "sha256": "2b47862190a7094ec76b03609e41079bbe46dc5fe6a0b985d144e9765d9faf50"
+      }
+    },
+    {
+      "id": "ue5-vehicle-synth",
+      "title": "UE5 Vehicle\nSynth",
+      "category": "Synthetic data",
+      "tagline": "From capture geometry\nto labelled vehicle poses",
+      "links": "Code / Dataset / Experiment",
+      "caption": "Projected ground truth from the capture pipeline",
+      "visual": "evidence/previews/inputs/ue5-vehicle-synth.png",
+      "crop": null,
+      "source": {
+        "repository": "kiselyovd/ue5-vehicle-synth",
+        "revision": "98b4697e8b48b376134ee5183f9e374f4c96f600",
+        "path": "docs/assets/showcase/stages/geometry.png",
+        "sha256": "9e0a6e6a935e85f9bcaf14cedfd6c84c4b68337585ff9928033967d5cc20cc99"
+      }
+    },
+    {
+      "id": "ml-project-template",
+      "title": "ML Project\nTemplate",
+      "category": "Engineering tools",
+      "tagline": "A reusable scaffold\nfor reproducible ML projects",
+      "links": "Code / Scaffold / Docs",
+      "caption": "Explore the real project scaffold",
+      "visual": "evidence/previews/inputs/ml-project-template.png",
+      "crop": null,
+      "source": {
+        "repository": "kiselyovd/ml-project-template",
+        "revision": "4c67b1319f98549ba2fa9bf0dcdf0b56a49a7619",
+        "path": "docs/images/showcase.png",
+        "sha256": "867c560b4fc5cf4ff27182a863a5c59ea357cda0a6b11b79452633a472465252"
+      }
+    }
+  ]
+}

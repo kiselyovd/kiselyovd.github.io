@@ -1,0 +1,14 @@
+# Standalone CI verification environment; no application production dependencies.
+huggingface-hub==1.33.0
+transformers==5.5.4
+torch==2.8.0
+torchvision==0.23.0
+numpy==2.4.4
+pillow==12.3.0
+scikit-learn==1.8.0
+lightgbm==4.6.0
+pandas==2.3.3
+joblib==1.5.2
+ultralytics==8.4.37
+sentencepiece==0.2.1
+safetensors==0.8.0

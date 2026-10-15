@@ -1,0 +1,104 @@
+{
+  "renderer_sha256": "381021e708028e2bf42f0f97ab32d66df71747fdfced5fda3922bc06f805488b",
+  "registry_sha256": "fb349aabec8457014ba0726b025f6d5fbee03d7357dbce625f57f0556bfbf8d8",
+  "outputs": [
+    {
+      "project": "vehicle-keypoints",
+      "theme": "dark",
+      "path": "public/previews/vehicle-keypoints/social-preview.png",
+      "sha256": "83d6c70f35c6dbd0762d95477d9d7faa2c0d045eb04e29bf9ddc62c9bdfb9e33",
+      "bytes": 335968
+    },
+    {
+      "project": "vehicle-keypoints",
+      "theme": "light",
+      "path": "public/previews/vehicle-keypoints/social-preview-light.png",
+      "sha256": "1d0df6b0cf256bdd7b31c2ec960ed3f4c01980a1bf5728bbdfa60aefd1ea94fe",
+      "bytes": 337684
+    },
+    {
+      "project": "brain-mri-segmentation",
+      "theme": "dark",
+      "path": "public/previews/brain-mri-segmentation/social-preview.png",
+      "sha256": "e0b7215a62f52620f0df740a2c8a2227045cfc4fd038d9b34c352270119d3381",
+      "bytes": 205589
+    },
+    {
+      "project": "brain-mri-segmentation",
+      "theme": "light",
+      "path": "public/previews/brain-mri-segmentation/social-preview-light.png",
+      "sha256": "35e95bf8ea6b24c2d1db88a26eedc925ef691e280336d5b53703a98848699cba",
+      "bytes": 206808
+    },
+    {
+      "project": "chest-xray-classifier",
+      "theme": "dark",
+      "path": "public/previews/chest-xray-classifier/social-preview.png",
+      "sha256": "799dd76999e8ff7c77dbc3c6ac863eb1e8e80d28bc47b413dc76f7737a00ba0c",
+      "bytes": 183526
+    },
+    {
+      "project": "chest-xray-classifier",
+      "theme": "light",
+      "path": "public/previews/chest-xray-classifier/social-preview-light.png",
+      "sha256": "b12265bda9fbdab17e4d208d34911b0c89a1b5467336f30b6fe9a65fed62d522",
+      "bytes": 184480
+    },
+    {
+      "project": "cardio-risk-rf",
+      "theme": "dark",
+      "path": "public/previews/cardio-risk-rf/social-preview.png",
+      "sha256": "e504582d79bf6255f6cf263444451d1cbfbb0805079d9622389151a30d858f58",
+      "bytes": 83498
+    },
+    {
+      "project": "cardio-risk-rf",
+      "theme": "light",
+      "path": "public/previews/cardio-risk-rf/social-preview-light.png",
+      "sha256": "544dc0c77da157e6a801b87f584925b0f7c9e86d6088f72807c818724370efdf",
+      "bytes": 84457
+    },
+    {
+      "project": "grnti-text-classifier",
+      "theme": "dark",
+      "path": "public/previews/grnti-text-classifier/social-preview.png",
+      "sha256": "66fc32151e053673c47ef33c9ee834d8d5e8bcc1b26dffd60f41532afbda8ca7",
+      "bytes": 70222
+    },
+    {
+      "project": "grnti-text-classifier",
+      "theme": "light",
+      "path": "public/previews/grnti-text-classifier/social-preview-light.png",
+      "sha256": "22b9b82d92640232e64c4faf10a68984d794ba110618a31e512149befe5ed24d",
+      "bytes": 71091
+    },
+    {
+      "project": "ue5-vehicle-synth",
+      "theme": "dark",
+      "path": "public/previews/ue5-vehicle-synth/social-preview.png",
+      "sha256": "ef9a29981196ac211039334c80d944a948ef332e6d3fba70fe369d7934054f31",
+      "bytes": 343991
+    },
+    {
+      "project": "ue5-vehicle-synth",
+      "theme": "light",
+      "path": "public/previews/ue5-vehicle-synth/social-preview-light.png",
+      "sha256": "1fcedb881de27dbbe4ede67d6be6ab344f52a9dcb9ac15ec0c2d3e43a354a0e7",
+      "bytes": 345577
+    },
+    {
+      "project": "ml-project-template",
+      "theme": "dark",
+      "path": "public/previews/ml-project-template/social-preview.png",
+      "sha256": "f0728f6743159fa47c07bc49b20eebcf6d817d3cbf1622049a355453a33d30af",
+      "bytes": 136987
+    },
+    {
+      "project": "ml-project-template",
+      "theme": "light",
+      "path": "public/previews/ml-project-template/social-preview-light.png",
+      "sha256": "a36ce7d7b1ccb86abb0a5d2846ac010e6708d55caf6d9a5f9b305b700d73788d",
+      "bytes": 138000
+    }
+  ]
+}

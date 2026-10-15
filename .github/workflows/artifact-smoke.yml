@@ -1,0 +1,46 @@
+name: Native artifact smoke
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [brain-mri-segmentation, chest-xray-classifier, cardio-risk-rf, grnti-text-classifier, vehicle-keypoints, synthetic-vehicle-model]
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      HF_HUB_DISABLE_XET: '1'
+      HF_HUB_CACHE: ${{ runner.temp }}/hf-hub
+      MPLCONFIGDIR: ${{ runner.temp }}/matplotlib
+      YOLO_CONFIG_DIR: ${{ runner.temp }}/ultralytics
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Reserve 20 GiB plus 10 GiB peak packages, model and temporary downloads
+        run: |
+          python - <<'PY'
+          import shutil
+          from pathlib import Path
+          for path in (Path.cwd(), Path.home(), Path('/tmp')):
+              assert shutil.disk_usage(path).free >= 30 * 1024**3, f'Insufficient budget: {path}'
+          PY
+      - name: Install the frozen verification environment with CPU-only torch
+        run: |
+          python -m pip install --no-cache-dir torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir -r automation/requirements-smoke.txt
+      - name: Verify pinned native bytes, load model and run an interface probe
+        run: python automation/smoke_artifact.py '${{ matrix.target }}' --out 'smoke-receipts/${{ matrix.target }}.json'
+      - uses: actions/upload-artifact@v7
+        with:
+          name: native-smoke-${{ matrix.target }}
+          path: smoke-receipts/
+          retention-days: 14

@@ -19,6 +19,20 @@ The **Artifact integrity** workflow runs on pushes, PRs, manual dispatch and wee
 
 Experience-year and repository counters were removed. The existing layout, design tokens, enterprise/project ordering and bilingual controls are preserved. Each metric links to its pinned report; its evidence status links to the full manifest.
 
+## Native load and inference smoke
+
+The manually dispatched **Native artifact smoke** workflow verifies all six published model contracts in a frozen, standalone Python 3.12 CPU environment. It checks every manifest-listed native file's SHA256 before loading any weights or processor code, then performs a small native inference. The six matrix jobs require no write credential and publish exact-revision receipts. Packages and temporary model downloads are budgeted before installation, retaining a 20 GiB reserve.
+
+The probes use an authored image pattern, a short Russian text and two synthetic tabular rows. They verify processor dimensions, label order, probability shape/range, foreground logits, detector keypoint schemas and canonical/alias Cardio parity. They do not estimate benchmark quality, validate clinical use, or re-establish historical split independence. Quality replay remains a separate, explicit operation in each source repository.
+
+```bash
+python automation/smoke_artifact.py grnti-text-classifier --out smoke-receipts/grnti.json
+# Reuse an already populated pinned cache without downloading:
+python automation/smoke_artifact.py grnti-text-classifier --offline --out smoke-receipts/grnti.json
+```
+
+The shared preview renderer, real-figure provenance and dark/light variants are documented in [the visual-system guide](visual-system.md).
+
 
 ## Exact evidence bytes and browser QA
 
