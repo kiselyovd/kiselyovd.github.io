@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "publications": {
+    "brain-mri-segmentation": {
+      "repo_id": "kiselyovd/brain-mri-segmentation",
+      "repo_type": "model",
+      "before": "732b21da22336bb168d98b5ed514c88347499e3c",
+      "after": "babc3045b0173687da9560da1b0bdc80fc78b7d8",
+      "source_repository": "kiselyovd/brain-mri-segmentation",
+      "source_revision": "34614627bbd2884aedd552becce13adca77013fd",
+      "publisher_repository": "kiselyovd/kiselyovd.github.io",
+      "publisher_revision": "c028140e4cee65d0d8242bb3d546fde5cd2441d9",
+      "run_id": "38766711175",
+      "files": {
+        "README.md": "a2d620d2adfd8f6d70113d7559adaa6b05dd5c5e12596bc8b98ef725726efdce",
+        "artifact-manifest.json": "eee85c3a70f8c2041a28b859fac72f064c513731927d2d50497f9e17f5d016df",
+        "reports/provenance/lgg-source.json": "4b56ce609669915b58cf9341dc8be8d3a9e17b1761fecac1d6d00b8ea896f459",
+        "reports/provenance/lgg-split-manifest.json": "b9cd157b11674f834fe9d103eafaff0d194e5de82336b93f0acb9b813b3bebe0",
+        "reports/replay-segformer-2026-10-15.json": "f9ad41097f709744cec5315d513df5b4f5e54f80ee6061fe99a8cca0a2647a23",
+        "reports/replay-segformer-2026-10-15.npz": "fc84c65412120472fefef51fec45f99986888aea4e8a606249f30cbb59f5447d"
+      },
+      "changed": [
+        "artifact-manifest.json",
+        "reports/provenance/lgg-source.json",
+        "reports/provenance/lgg-split-manifest.json",
+        "reports/replay-segformer-2026-10-15.json",
+        "reports/replay-segformer-2026-10-15.npz"
+      ],
+      "native_artifacts_unchanged": true,
+      "raw_readback_exact": true,
+      "idempotent_no_op": false
+    },
+    "cardio-risk-rf": {
+      "repo_id": "kiselyovd/cardio-risk-rf",
+      "repo_type": "model",
+      "before": "0e66cc681247d41294cb741399a36ecb324476b7",
+      "after": "dbe9debeed52e94df2a2d3be03710a46d3fbb091",
+      "source_repository": "kiselyovd/cardio-risk-rf",
+      "source_revision": "ce00cd2192ef8c74546a93166aeaf82592543ced",
+      "publisher_repository": "kiselyovd/kiselyovd.github.io",
+      "publisher_revision": "c028140e4cee65d0d8242bb3d546fde5cd2441d9",
+      "run_id": "38766717248",
+      "files": {
+        "README.md": "9a801ff1eeb6d06defb3b26ae1543b3df93f8aacfa18989a0b4a4dff79ebad81",
+        "artifact-manifest.json": "01edb0fef005ff5e08cf78ee23ff56b82219dc747cebb4c9ec796f37465d0004",
+        "reports/provenance/source.json": "934406ba65b8a7dc8be7333441d314098c14fc336c40e6aaa9d26c136dba04ff",
+        "reports/provenance/split-rows.json": "da460a700516325bca0b3e6484d7910cb48cd73ab14bf0e94b866c7ea1f7e108",
+        "reports/replay-native.json": "c7207ce84db49fb9978a4efc2ff33e69bf54ff5c6d232e624820d09c9f679d4f",
+        "reports/replay-native.npz": "2d34be1be992adfcf56c55b6edbd4663a1800373d1c762ef9b329f7d93f74009"
+      },
+      "changed": [
+        "artifact-manifest.json",
+        "reports/provenance/source.json",
+        "reports/provenance/split-rows.json",
+        "reports/replay-native.json",
+        "reports/replay-native.npz"
+      ],
+      "native_artifacts_unchanged": true,
+      "raw_readback_exact": true,
+      "idempotent_no_op": false
+    },
+    "chest-xray-classifier": {
+      "repo_id": "kiselyovd/chest-xray-classifier",
+      "repo_type": "model",
+      "before": "524b30a4bc5f5d53f7192404fa88fe079341f989",
+      "after": "95955ac10c9e4c506dca88018241bda0d7d0b6af",
+      "source_repository": "kiselyovd/chest-xray-classifier",
+      "source_revision": "a31acaad327447d7a2cf69ce9f3025e1f182cacb",
+      "publisher_repository": "kiselyovd/kiselyovd.github.io",
+      "publisher_revision": "c028140e4cee65d0d8242bb3d546fde5cd2441d9",
+      "run_id": "38766706103",
+      "files": {
+        "README.md": "c35e65fe29e5a7d3c3164d49b275d280e3b946c31454c0bee9d73f9da11e1443",
+        "artifact-manifest.json": "258eae48024b1733a051921b069b804eef54ab3a6a39da6c73ca6f593e3be171",
+        "reports/provenance/chest-source.json": "6b13b85895183e507c35c8748fa904bf63e0058b18d10f2c7d2f45c4fc33b305",
+        "reports/provenance/chest-test-manifest.json": "cf7e87ede4868aa7c1ee848fd6a93b63c8407e8077ac3e5839f56cf834f21269",
+        "reports/replay-native-2026-10-15.json": "635fadbc43762e3bde8e20e464764e7be5561b9c23429e336ac219ae1c9bdc9b",
+        "reports/replay-native-2026-10-15.npz": "8289a21bac01d8a6c487cfdcf6cd21c33468d6b8f01fe7e049fa7d6e057d9893"
+      },
+      "changed": [
+        "artifact-manifest.json",
+        "reports/provenance/chest-source.json",
+        "reports/provenance/chest-test-manifest.json",
+        "reports/replay-native-2026-10-15.json",
+        "reports/replay-native-2026-10-15.npz"
+      ],
+      "native_artifacts_unchanged": true,
+      "raw_readback_exact": true,
+      "idempotent_no_op": false
+    },
+    "grnti-text-classifier": {
+      "repo_id": "kiselyovd/grnti-text-classifier",
+      "repo_type": "model",
+      "before": "949be2bbf6fda1466fb0487823a0b082feec2c8b",
+      "after": "333fb6c52e1c845684be2c2f68683b3fead6d06e",
+      "source_repository": "kiselyovd/grnti-text-classifier",
+      "source_revision": "379602cd90d5c1689a164a8ae06bc264c1c3e218",
+      "publisher_repository": "kiselyovd/kiselyovd.github.io",
+      "publisher_revision": "c028140e4cee65d0d8242bb3d546fde5cd2441d9",
+      "run_id": "38766585355",
+      "files": {
+        "README.md": "ae762bb29df29b42b72415332b55975e54bc469779ac41e8e4c59a0457ad647c",
+        "artifact-manifest.json": "34a5b6a24c707af4939b8d6a64ca89020001cac1382213af3466385b52f0c3bf",
+        "reports/replay-native.json": "09ddba01bf9a7db3c3258e17c1bc415c334c506c0a681b0350bcc1615ad3255b",
+        "reports/replay-native.npz": "8ffbb9cc4ef2d5644a01b06784d10209c9e0475e824fc53d5dccae2063e60b8c"
+      },
+      "changed": [
+        "artifact-manifest.json",
+        "reports/replay-native.json",
+        "reports/replay-native.npz"
+      ],
+      "native_artifacts_unchanged": true,
+      "raw_readback_exact": true,
+      "idempotent_no_op": false
+    },
+    "synthetic-vehicle-model": {
+      "repo_id": "kiselyovd/citysample-vehicle-keypoints-24pt",
+      "repo_type": "model",
+      "before": "40dad97ad5cd32b0fbc5023199dc0ff09a374e96",
+      "after": "674c49e9505d61d45b68dfbe3fc877fdad7f347d",
+      "source_repository": "kiselyovd/vehicle-keypoints",
+      "source_revision": "d8fb4c264155a72867689c56fdd8958f97c5de04",
+      "publisher_repository": "kiselyovd/kiselyovd.github.io",
+      "publisher_revision": "c028140e4cee65d0d8242bb3d546fde5cd2441d9",
+      "run_id": "38766727441",
+      "files": {
+        "README.md": "0b9c9ca971de43061670673aecd0f3944a5f4b186905bb44b7ffca7b7ee4fe11",
+        "artifact-manifest.json": "81bbdf29efa065e3ff593d36d3bd8b2a26701e8cc211661643947b43ed5453f0",
+        "reports/provenance/synthetic/crosswalk.jsonl": "840a9f538f95eed38889e2cdd4ab5ac97928d183a469bd57175ec980b92fcd0c",
+        "reports/synthetic-model-reported.json": "79f645ea932991d2e1bdfc8d4a80ab571b66e17f720e8f8b76689b2776a09d80"
+      },
+      "changed": [
+        "artifact-manifest.json",
+        "reports/provenance/synthetic/crosswalk.jsonl",
+        "reports/synthetic-model-reported.json"
+      ],
+      "native_artifacts_unchanged": true,
+      "raw_readback_exact": true,
+      "idempotent_no_op": false
+    },
+    "ue5-vehicle-synth": {
+      "repo_id": "kiselyovd/citysample-vehicle-keypoints-24pt",
+      "repo_type": "dataset",
+      "before": "efa3f7e96b8af032b5678a65f51c1cf40869aa3c",
+      "after": "6e256958f3a2834959b20164dfc6aec559ec5282",
+      "source_repository": "kiselyovd/ue5-vehicle-synth",
+      "source_revision": "30473f713315e2e48ab41e6a80ec09abc76d8da2",
+      "publisher_repository": "kiselyovd/kiselyovd.github.io",
+      "publisher_revision": "c028140e4cee65d0d8242bb3d546fde5cd2441d9",
+      "run_id": "38766732851",
+      "files": {
+        "README.md": "3d0f4d8209da1d042986a33595c62e13d26556eebdb0a505f57969b0563b4858",
+        "artifact-manifest.json": "58fdff15bd0c50bfe7517c9c481075ca8959fd337918e34f8b349d02addba9e9",
+        "reports/provenance/synthetic/crosswalk.jsonl": "840a9f538f95eed38889e2cdd4ab5ac97928d183a469bd57175ec980b92fcd0c",
+        "reports/provenance/synthetic/parquet-membership.json": "7a92c744e3074a8cfd6c434f1e49819a1036ca5217943dd859ae201903946b77",
+        "reports/provenance/synthetic/source.json": "a32435aa5f23a41885604a3789de4e9b440b418009ba64982657f2b34877eac3"
+      },
+      "changed": [
+        "artifact-manifest.json",
+        "reports/provenance/synthetic/crosswalk.jsonl",
+        "reports/provenance/synthetic/parquet-membership.json",
+        "reports/provenance/synthetic/source.json"
+      ],
+      "native_artifacts_unchanged": true,
+      "raw_readback_exact": true,
+      "idempotent_no_op": false
+    },
+    "vehicle-keypoints": {
+      "repo_id": "kiselyovd/vehicle-keypoints",
+      "repo_type": "model",
+      "before": "5dc28993c780e25b4ddc198f1f75ef5f6e897555",
+      "after": "48b5795f3b79cdfe7ff6588812aa388a6a7fdd9d",
+      "source_repository": "kiselyovd/vehicle-keypoints",
+      "source_revision": "d8fb4c264155a72867689c56fdd8958f97c5de04",
+      "publisher_repository": "kiselyovd/kiselyovd.github.io",
+      "publisher_revision": "c028140e4cee65d0d8242bb3d546fde5cd2441d9",
+      "run_id": "38766722790",
+      "files": {
+        "README.md": "fec9f1aaf960d941cd035e271cf4306291574e91e9bd4573ff38467fe22985a9",
+        "artifact-manifest.json": "3d290cdea6cb19559d04fa908bb3a6c79469182924ec2476daccd36488bafb32",
+        "reports/metrics.json": "71efbee0f57b4e6061bf8804572f5b7bff1900bd46f58b29ddac50c3112eff59"
+      },
+      "changed": [
+        "artifact-manifest.json",
+        "reports/metrics.json"
+      ],
+      "native_artifacts_unchanged": true,
+      "raw_readback_exact": true,
+      "idempotent_no_op": false
+    }
+  },
+  "idempotency_probe": {
+    "repo_id": "kiselyovd/grnti-text-classifier",
+    "repo_type": "model",
+    "before": "333fb6c52e1c845684be2c2f68683b3fead6d06e",
+    "after": "333fb6c52e1c845684be2c2f68683b3fead6d06e",
+    "source_repository": "kiselyovd/grnti-text-classifier",
+    "source_revision": "379602cd90d5c1689a164a8ae06bc264c1c3e218",
+    "publisher_repository": "kiselyovd/kiselyovd.github.io",
+    "publisher_revision": "c028140e4cee65d0d8242bb3d546fde5cd2441d9",
+    "run_id": "38767312538",
+    "files": {
+      "README.md": "ae762bb29df29b42b72415332b55975e54bc469779ac41e8e4c59a0457ad647c",
+      "artifact-manifest.json": "34a5b6a24c707af4939b8d6a64ca89020001cac1382213af3466385b52f0c3bf",
+      "reports/replay-native.json": "09ddba01bf9a7db3c3258e17c1bc415c334c506c0a681b0350bcc1615ad3255b",
+      "reports/replay-native.npz": "8ffbb9cc4ef2d5644a01b06784d10209c9e0475e824fc53d5dccae2063e60b8c"
+    },
+    "changed": [],
+    "native_artifacts_unchanged": true,
+    "raw_readback_exact": true,
+    "idempotent_no_op": true
+  }
+}

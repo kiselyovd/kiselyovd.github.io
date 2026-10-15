@@ -25,3 +25,7 @@ The workflow consumes repository secret **`HF_PORTFOLIO_TOKEN`** from `kiselyovd
 Add it directly through [GitHub Actions repository secrets](https://github.com/kiselyovd/kiselyovd.github.io/settings/secrets/actions). Never paste it into a chat or commit it. Preparation, drift checks and tests work without this credential. Publication refuses implicit cached credentials and aborts if the authenticated HF account is different. Hardware, billing, account settings and new repository creation are outside this publisher.
 
 The separate GRNTI Space source remains in its project repository, with a pinned native model contract and production-root CI. Space builds and model evidence releases have distinct runtime proofs.
+
+## Verified publication
+
+The [2026-10-15 publication receipts](../evidence/publications/2026-10-15.json) retain all seven source/workflow/Hub revisions and exact file checksums in Git. Every publication confirmed unchanged native artifacts and byte-exact readback. The additional GRNTI probe returned `changed=[]` and `idempotent_no_op=true`; it created no new Hub commit. These durable receipts remain available after the temporary workflow review artifacts expire.
