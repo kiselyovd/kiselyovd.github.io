@@ -52,11 +52,16 @@ import ThemeToggle from './ThemeToggle.astro';
     var close = document.getElementById('mobile-menu-close');
     var panel = document.getElementById('mobile-menu-panel');
 
+    var previousFocus;
+
     function setOpen(isOpen) {
+      if (isOpen) previousFocus = document.activeElement;
       panel.classList.toggle('hidden', !isOpen);
       panel.classList.toggle('flex', isOpen);
       open.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
+      if (isOpen) close.focus();
+      else if (previousFocus && previousFocus.isConnected) previousFocus.focus();
     }
 
     open.addEventListener('click', function () {
@@ -66,7 +71,18 @@ import ThemeToggle from './ThemeToggle.astro';
       setOpen(false);
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !panel.classList.contains('hidden')) setOpen(false);
+      if (panel.classList.contains('hidden')) return;
+      if (e.key === 'Escape') setOpen(false);
+      if (e.key === 'Tab') {
+        var items = Array.from(panel.querySelectorAll('a[href], button:not(:disabled), input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex="0"]'));
+        var first = items[0];
+        var last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
     });
     document.querySelectorAll('.mobile-nav-link').forEach(function (a) {
       a.addEventListener('click', function () {

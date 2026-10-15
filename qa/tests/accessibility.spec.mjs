@@ -43,7 +43,13 @@ for (const [name, url] of targets) {
 
 test('portfolio language and keyboard preserve generated evidence', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('button', { name: 'Switch language' }).press('Enter');
+  const mobile = page.viewportSize().width < 768;
+  if (mobile) {
+    await page.getByRole('button', { name: 'Open menu', exact: true }).press('Enter');
+    await expect(page.getByRole('button', { name: 'Close menu', exact: true })).toBeFocused();
+  }
+  await page.getByRole('button', { name: 'EN · RU — Switch language', exact: true }).press('Enter');
+  if (mobile) await page.getByRole('button', { name: 'Close menu', exact: true }).press('Enter');
   await expect(page.getByRole('heading', { name: 'Модели и оценка', exact: true })).toBeVisible();
   const score = page.getByRole('link', { name: 'Dice 88.08%. Evaluation report for brain-mri-segmentation', exact: true });
   await expect(score).toHaveAttribute('href', /\/blob\/[a-f0-9]{40}\/reports\//);
