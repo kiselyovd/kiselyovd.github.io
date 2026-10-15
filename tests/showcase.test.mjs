@@ -77,6 +77,10 @@ test('invalid source slugs and unsupported presets cannot produce shell commands
 
 test('production portfolio links live inference and preserves enterprise before research', () => {
   const html = built('index.html');
+  assert.ok(html.includes('aria-label="Hugging Face Collections"'));
+  for (const slug of ['vehicle-perception-and-synthetic-data', 'medical-computer-vision', 'applied-classification']) {
+    assert.ok(html.includes(`https://huggingface.co/collections/kiselyovd/${slug}`));
+  }
   assert.ok(html.includes('https://huggingface.co/spaces/kiselyovd/vehicle-keypoints-demo'));
   assert.ok(html.includes('https://kiselyovd.github.io/vehicle-keypoints/phase0/synthetic-pretraining/'));
   assert.ok(html.indexOf('id="work"') < html.indexOf('id="flagship"'));

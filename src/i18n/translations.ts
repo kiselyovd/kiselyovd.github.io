@@ -1,5 +1,6 @@
 export const translations = {
   en: {
+    'port.collections': 'Browse the collections on Hugging Face:',
     'port.models': 'Models & evaluation',
     'port.evidence.intro':
       'Scores link to pinned evaluation records; replayed and historical results are labelled separately.',
@@ -187,6 +188,7 @@ export const translations = {
   },
 
   ru: {
+    'port.collections': 'Коллекции на Hugging Face:',
     'port.models': 'Модели и оценка',
     'port.evidence.intro':
       'Метрики ведут к зафиксированным отчётам; повторные прогоны и исторические результаты отмечены отдельно.',
