@@ -5,3 +5,14 @@
 dist/
 node_modules/
 .superpowers/
+
+# Isolated browser QA outputs
+qa/node_modules/
+qa/test-results/
+qa/playwright-report/
+.pages-artifact/
+
+# Reviewable release payloads are attached as workflow artifacts.
+release-candidate/
+automation/__pycache__/
+automation/tests/__pycache__/

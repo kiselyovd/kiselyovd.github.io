@@ -63,10 +63,10 @@
     {
       "id": "cardio-risk-rf",
       "repository": "cardio-risk-rf",
-      "revision": "ecc8d51bdacd9856e61f88996c4532bf5c06bed9",
+      "revision": "ce00cd2192ef8c74546a93166aeaf82592543ced",
       "manifest": "artifact-manifest.json",
       "snapshot": "evidence/artifacts/cardio-risk-rf/manifest.json",
-      "sha256": "c7ddbc964defb19d8283c5d0f79c8902b514b21bde1e84641fba7fe378be3fdd",
+      "sha256": "01edb0fef005ff5e08cf78ee23ff56b82219dc747cebb4c9ec796f37465d0004",
       "reportSnapshot": "evidence/artifacts/cardio-risk-rf/report.json",
       "hubCardSnapshot": "evidence/artifacts/cardio-risk-rf/hub-card.md",
       "hubCardRevision": "0e66cc681247d41294cb741399a36ecb324476b7",

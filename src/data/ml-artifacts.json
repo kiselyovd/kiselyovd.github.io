@@ -89,7 +89,7 @@
     {
       "id": "cardio-risk-rf",
       "repo": "cardio-risk-rf",
-      "revision": "ecc8d51bdacd9856e61f88996c4532bf5c06bed9",
+      "revision": "ce00cd2192ef8c74546a93166aeaf82592543ced",
       "hubRepo": "kiselyovd/cardio-risk-rf",
       "hubRevision": "a0117e88461cf4197a2a604203f68dde23fd069a",
       "status": "replayed_reconstructed",
@@ -101,8 +101,8 @@
         "RF ROC-AUC": 0.7948647255716084,
         "RF average precision": 0.7794140387677455
       },
-      "reportUrl": "https://github.com/kiselyovd/cardio-risk-rf/blob/ecc8d51bdacd9856e61f88996c4532bf5c06bed9/reports/replay-native.json",
-      "manifestUrl": "https://github.com/kiselyovd/cardio-risk-rf/blob/ecc8d51bdacd9856e61f88996c4532bf5c06bed9/artifact-manifest.json",
+      "reportUrl": "https://github.com/kiselyovd/cardio-risk-rf/blob/ce00cd2192ef8c74546a93166aeaf82592543ced/reports/replay-native.json",
+      "manifestUrl": "https://github.com/kiselyovd/cardio-risk-rf/blob/ce00cd2192ef8c74546a93166aeaf82592543ced/artifact-manifest.json",
       "demoUrl": null
     },
     {
@@ -173,8 +173,8 @@
       "hfSlug": "cardio-risk-rf",
       "status": "replayed_reconstructed",
       "scope": "Target is CVD presence at examination. The exact legacy split is 48999/10500/10501; original training row membership is unrecorded. Average precision uses sklearn AP.",
-      "reportUrl": "https://github.com/kiselyovd/cardio-risk-rf/blob/ecc8d51bdacd9856e61f88996c4532bf5c06bed9/reports/replay-native.json",
-      "manifestUrl": "https://github.com/kiselyovd/cardio-risk-rf/blob/ecc8d51bdacd9856e61f88996c4532bf5c06bed9/artifact-manifest.json",
+      "reportUrl": "https://github.com/kiselyovd/cardio-risk-rf/blob/ce00cd2192ef8c74546a93166aeaf82592543ced/reports/replay-native.json",
+      "manifestUrl": "https://github.com/kiselyovd/cardio-risk-rf/blob/ce00cd2192ef8c74546a93166aeaf82592543ced/artifact-manifest.json",
       "demoUrl": null,
       "downloads": false
     },

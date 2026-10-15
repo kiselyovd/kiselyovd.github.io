@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_run:
+    workflows: [Publish reviewed HF artifacts]
+    types: [completed]
 
 permissions:
   contents: read
@@ -16,6 +19,12 @@ concurrency:
 
 jobs:
   lint:
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       startsWith(github.event.workflow_run.display_title, 'Publish approved metadata') &&
+       github.event.workflow_run.head_branch == 'main' &&
+       github.event.workflow_run.head_repository.full_name == github.repository)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -53,8 +62,50 @@ jobs:
         with:
           path: dist
 
-  deploy:
+  accessibility:
     needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - uses: actions/download-artifact@v8
+        with:
+          name: github-pages
+          path: .pages-artifact
+      - name: Unpack the actual production build
+        run: |
+          python3 - <<'PY'
+          import tarfile
+          with tarfile.open('.pages-artifact/artifact.tar') as archive:
+              archive.extractall('dist', filter='data')
+          PY
+      - name: Check peak browser setup budget with a 20 GiB reserve
+        run: |
+          python3 - <<'PY'
+          import shutil
+          assert shutil.disk_usage('.').free >= 25 * 1024**3, 'Insufficient browser setup budget'
+          PY
+      - run: npm ci --prefix qa --ignore-scripts
+      - run: node qa/node_modules/@playwright/test/cli.js install --with-deps chromium
+      - name: Test production roots, mobile reflow, keyboard and automated WCAG rules
+        run: npm --prefix qa test
+      - name: Keep browser evidence and actionable violations
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: accessibility-evidence
+          path: |
+            qa/test-results/
+            qa/playwright-report/
+          retention-days: 3
+
+  deploy:
+    needs: [build, accessibility]
     runs-on: ubuntu-latest
     environment:
       name: github-pages

@@ -18,3 +18,10 @@ The remote check compares pinned GitHub manifests/reports, the current HF genera
 The **Artifact integrity** workflow runs on pushes, PRs, manual dispatch and weekly on Monday at 06:17 UTC. It reads public evidence and requires no HF write credential. Deployment also checks the generated production root. Updating evidence requires reviewing the upstream release and replacing the corresponding immutable source snapshots before regeneration.
 
 Experience-year and repository counters were removed. The existing layout, design tokens, enterprise/project ordering and bilingual controls are preserved. Each metric links to its pinned report; its evidence status links to the full manifest.
+
+
+## Exact evidence bytes and browser QA
+
+Evidence snapshots retain the bytes read back from their immutable upstream revision. Git text conversion is disabled for `evidence/artifacts/**`; neither binary artifacts nor third-party text evidence may be silently normalised before checksum validation. Author-created source files use the declared LF conventions. A candidate card should use its chosen line endings before publication, then pass a raw-byte readback.
+
+`qa/` is an isolated development-only package with locked Playwright/axe versions. CI uses the emitted Pages build, checks 1280px light and 390px dark/reduced-motion contexts, records actual viewport dimensions, keyboard behavior and axe findings. It also checks the four public project explorers and both free HF Spaces without running GPU inference. Screenshots and actionable violations are retained as the `accessibility-evidence` artifact. Automated rules complement manual browser checks; they are not a complete accessibility certification.
