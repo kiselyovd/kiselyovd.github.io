@@ -1,0 +1,187 @@
+{
+  "workflow_run": "https://github.com/kiselyovd/kiselyovd.github.io/actions/runs/38795274625",
+  "source_revision": "7efec9a44382677b58cb657843446da104d8bf57",
+  "scope": "pinned native load and interface inference; not benchmark replay",
+  "models": [
+    {
+      "target": "brain-mri-segmentation",
+      "repo_id": "kiselyovd/brain-mri-segmentation",
+      "revision": "48c79adfde8b063e74737357ab20a6f7f67a0b1b",
+      "native_sha256": {
+        "model.safetensors": "b8e0816e76ee1f849ad37b119fc42647beba5072e842db958b848b0673dedfa4",
+        "preprocessor_config.json": "f7efd9c9f332e4311455ef37c2da164b84a4a89f262479cfe495b054876a7e7d",
+        "config.json": "f946165de98c3b962f07e3f4a7108ab74388806ec03dc974b507d70a44d8c676"
+      },
+      "input_kind": "authored synthetic interface probes; no benchmark or clinical claim",
+      "result": {
+        "logit_shape": [
+          1,
+          2,
+          64,
+          64
+        ],
+        "processor_shape": [
+          1,
+          3,
+          256,
+          256
+        ]
+      },
+      "packages": {
+        "torch": "2.8.0+cpu",
+        "transformers": "5.5.4",
+        "huggingface-hub": "1.33.0",
+        "ultralytics": "8.4.37",
+        "scikit-learn": "1.8.0",
+        "lightgbm": "4.6.0"
+      },
+      "status": "passed"
+    },
+    {
+      "target": "cardio-risk-rf",
+      "repo_id": "kiselyovd/cardio-risk-rf",
+      "revision": "a0117e88461cf4197a2a604203f68dde23fd069a",
+      "native_sha256": {
+        "cardio_risk_lgbm.joblib": "d0b96ed0fb1209be8ed73ebb41d41225d6d106c2f291a285c6c9fc8950a2ad39",
+        "cardio_risk_rf.joblib": "eff065c65821d55059ac269c9dad644b34da5456f364020ccd13f22e15a9bb9b",
+        "sklearn_model.joblib": "a62a5872cf7f8ca117967a164f8de1cf53c83d1b4da03a9dbb636af93b98f6e3"
+      },
+      "input_kind": "authored synthetic interface probes; no benchmark or clinical claim",
+      "result": {
+        "shape": [
+          2,
+          2
+        ],
+        "alias_exact": true,
+        "baseline_exercised": true
+      },
+      "packages": {
+        "torch": "2.8.0+cpu",
+        "transformers": "5.5.4",
+        "huggingface-hub": "1.33.0",
+        "ultralytics": "8.4.37",
+        "scikit-learn": "1.8.0",
+        "lightgbm": "4.6.0"
+      },
+      "status": "passed"
+    },
+    {
+      "target": "chest-xray-classifier",
+      "repo_id": "kiselyovd/chest-xray-classifier",
+      "revision": "09bd78b58c657870961faa1b79699da5ca8bc796",
+      "native_sha256": {
+        "model.safetensors": "d3c0b8fba6caa340cfbabf06119c6a9988b018c277a72d9565e0f62acda2a7d0",
+        "config.json": "f85b3ca1c65ed85e698b77e91f7fc1713b5a6541af33015b2f6a6d83f23ead23",
+        "preprocessor_config.json": "8fa44d718a4b6537041d445c80256992305ef02d673238a78cdb81cb21db7cb2",
+        "hf_processor.py": "cbe88447d9b65d9eabb88f468219a3ac8963f7bce4ae233cb21a22676cf8eaf3",
+        "LICENSE.processor.txt": "a8209794f671166b36312abd4f75beaaf8eebfc2f1a118d3a1162ba36bdeea0a"
+      },
+      "input_kind": "authored synthetic interface probes; no benchmark or clinical claim",
+      "result": {
+        "shape": [
+          1,
+          3
+        ],
+        "processor_shape": [
+          1,
+          3,
+          224,
+          224
+        ]
+      },
+      "packages": {
+        "torch": "2.8.0+cpu",
+        "transformers": "5.5.4",
+        "huggingface-hub": "1.33.0",
+        "ultralytics": "8.4.37",
+        "scikit-learn": "1.8.0",
+        "lightgbm": "4.6.0"
+      },
+      "status": "passed"
+    },
+    {
+      "target": "grnti-text-classifier",
+      "repo_id": "kiselyovd/grnti-text-classifier",
+      "revision": "24fbe75c27112612a464935c95465def6af788ef",
+      "native_sha256": {
+        "model.safetensors": "324f0ca0b15fd30f8b0c9bd2e9db4594b88119489f3a8d1df0169a455ca1eba4",
+        "config.json": "06169b0e38121b15c67f5fbd24057ec588573e6bb7ce30b4a1b45a7f1ced0e81"
+      },
+      "input_kind": "authored synthetic interface probes; no benchmark or clinical claim",
+      "result": {
+        "shape": [
+          1,
+          28
+        ],
+        "top_five_codes": [
+          "500000: Автоматика. Вычислительная техника",
+          "270000: Математика",
+          "730000: Транспорт",
+          "60000: Экономика. Экономические науки",
+          "550000: Машиностроение"
+        ]
+      },
+      "packages": {
+        "torch": "2.8.0+cpu",
+        "transformers": "5.5.4",
+        "huggingface-hub": "1.33.0",
+        "ultralytics": "8.4.37",
+        "scikit-learn": "1.8.0",
+        "lightgbm": "4.6.0"
+      },
+      "status": "passed"
+    },
+    {
+      "target": "synthetic-vehicle-model",
+      "repo_id": "kiselyovd/citysample-vehicle-keypoints-24pt",
+      "revision": "bb0971f76e0944a3dd90faa236cbff37547b5590",
+      "native_sha256": {
+        "best.pt": "16d9793c283a39e262f3a119c03cac0006b86fa5732162d9e880cd4ed54f8379"
+      },
+      "input_kind": "authored synthetic interface probes; no benchmark or clinical claim",
+      "result": {
+        "keypoint_shape": [
+          1,
+          24,
+          3
+        ],
+        "detections": 1
+      },
+      "packages": {
+        "torch": "2.8.0+cpu",
+        "transformers": "5.5.4",
+        "huggingface-hub": "1.33.0",
+        "ultralytics": "8.4.37",
+        "scikit-learn": "1.8.0",
+        "lightgbm": "4.6.0"
+      },
+      "status": "passed"
+    },
+    {
+      "target": "vehicle-keypoints",
+      "repo_id": "kiselyovd/vehicle-keypoints",
+      "revision": "d277c2d8c9b5ee49d9fed85fe43bdd72b16a0f06",
+      "native_sha256": {
+        "weights.pt": "6fab133b352391b24209204c55733558a3c18ef36be591ecf32d0a7ca3c27235"
+      },
+      "input_kind": "authored synthetic interface probes; no benchmark or clinical claim",
+      "result": {
+        "keypoint_shape": [
+          0,
+          14,
+          3
+        ],
+        "detections": 0
+      },
+      "packages": {
+        "torch": "2.8.0+cpu",
+        "transformers": "5.5.4",
+        "huggingface-hub": "1.33.0",
+        "ultralytics": "8.4.37",
+        "scikit-learn": "1.8.0",
+        "lightgbm": "4.6.0"
+      },
+      "status": "passed"
+    }
+  ]
+}

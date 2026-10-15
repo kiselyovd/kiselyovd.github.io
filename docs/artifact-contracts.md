@@ -33,6 +33,8 @@ python automation/smoke_artifact.py grnti-text-classifier --offline --out smoke-
 
 The shared preview renderer, real-figure provenance and dark/light variants are documented in [the visual-system guide](visual-system.md).
 
+All six native smoke jobs passed in [run 38795274625](https://github.com/kiselyovd/kiselyovd.github.io/actions/runs/38795274625). Their exact native revisions, checksums, package versions and output contracts are preserved in [the durable receipt](../evidence/publications/native-smoke-2026-10-15.json).
+
 
 ## Exact evidence bytes and browser QA
 

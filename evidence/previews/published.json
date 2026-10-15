@@ -1,0 +1,54 @@
+{
+  "scope": "Seven non-Dungeon GitHub social previews, publicly read back and compared by pixels",
+  "previews": [
+    {
+      "repository": "vehicle-keypoints",
+      "url": "https://repository-images.githubusercontent.com/665470957/7e8f06ff-c51b-48e8-bf62-602a90a99f43",
+      "status": 200,
+      "pixels_identical": true,
+      "expected_sha256": "83d6c70f35c6dbd0762d95477d9d7faa2c0d045eb04e29bf9ddc62c9bdfb9e33"
+    },
+    {
+      "repository": "brain-mri-segmentation",
+      "url": "https://repository-images.githubusercontent.com/665462836/74ea8290-9438-444e-a8c3-375a0f1bfd74",
+      "status": 200,
+      "pixels_identical": true,
+      "expected_sha256": "e0b7215a62f52620f0df740a2c8a2227045cfc4fd038d9b34c352270119d3381"
+    },
+    {
+      "repository": "chest-xray-classifier",
+      "url": "https://repository-images.githubusercontent.com/665456753/d629d7b8-5e39-4620-9972-dd6a2a670fda",
+      "status": 200,
+      "pixels_identical": true,
+      "expected_sha256": "799dd76999e8ff7c77dbc3c6ac863eb1e8e80d28bc47b413dc76f7737a00ba0c"
+    },
+    {
+      "repository": "cardio-risk-rf",
+      "url": "https://repository-images.githubusercontent.com/665474902/a773ba41-d03e-44a5-a327-2da66bf5da32",
+      "status": 200,
+      "pixels_identical": true,
+      "expected_sha256": "e504582d79bf6255f6cf263444451d1cbfbb0805079d9622389151a30d858f58"
+    },
+    {
+      "repository": "grnti-text-classifier",
+      "url": "https://repository-images.githubusercontent.com/665490328/172c74b6-be78-4579-8368-b08ce9c4a617",
+      "status": 200,
+      "pixels_identical": true,
+      "expected_sha256": "66fc32151e053673c47ef33c9ee834d8d5e8bcc1b26dffd60f41532afbda8ca7"
+    },
+    {
+      "repository": "ue5-vehicle-synth",
+      "url": "https://repository-images.githubusercontent.com/1271165342/0657c15e-eea7-4718-b07c-750fae43605c",
+      "status": 200,
+      "pixels_identical": true,
+      "expected_sha256": "ef9a29981196ac211039334c80d944a948ef332e6d3fba70fe369d7934054f31"
+    },
+    {
+      "repository": "ml-project-template",
+      "url": "https://repository-images.githubusercontent.com/1209590531/5e623a7a-b08a-404c-a847-e9bd8fd57f07",
+      "status": 200,
+      "pixels_identical": true,
+      "expected_sha256": "f0728f6743159fa47c07bc49b20eebcf6d817d3cbf1622049a355453a33d30af"
+    }
+  ]
+}
