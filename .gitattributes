@@ -4,3 +4,6 @@
 *.json text eol=lf
 *.astro text eol=lf
 *.css text eol=lf
+
+# Exact third-party evidence bytes must survive Git checkout unchanged.
+evidence/artifacts/** -text linguist-generated=true
